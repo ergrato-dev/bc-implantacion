@@ -1,0 +1,35 @@
+# Laboratorio de la semana 3: hosting básico con reverse proxy, HTTPS y SFTP.
+# Uso: docker compose up -d --wait   (desde esta carpeta)
+services:
+  proxy:
+    image: caddy:2-alpine
+    container_name: lab-hosting-proxy
+    ports:
+      - "8080:80"
+      - "8443:443"
+    volumes:
+      - ./caddy:/etc/caddy   # carpeta, no archivo: los editores que guardan con archivo nuevo rompen un bind mount de archivo
+      - sitio:/srv/sitio:ro
+      - caddy_data:/data
+    depends_on:
+      - api
+
+  api:
+    image: traefik/whoami
+    container_name: lab-hosting-api
+
+  sftp:
+    image: atmoz/sftp:alpine
+    container_name: lab-hosting-sftp
+    # usuario:contraseña:uid:gid:carpeta — contraseña solo de laboratorio
+    command: deploy:deploy-lab:1001:1001
+    ports:
+      - "2222:22"
+    volumes:
+      - sitio:/home/deploy/sitio
+      - ./llaves:/home/deploy/.ssh/keys:ro
+      - ./sftp-permisos.sh:/etc/sftp.d/permisos.sh:ro
+
+volumes:
+  sitio:
+  caddy_data:

@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" width="800" height="300" font-family="Inter,Roboto,'Open Sans',system-ui,sans-serif">
+  <rect width="800" height="300" fill="#0d1117"/>
+  <text x="400" y="30" font-size="17" font-weight="700" fill="#e6edf3" text-anchor="middle">Reverse proxy: un punto de entrada, varios servicios</text>
+
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#58a6ff"/>
+    </marker>
+  </defs>
+
+  <!-- Internet -->
+  <g font-size="12" text-anchor="middle">
+    <rect x="20" y="70" width="150" height="44" rx="6" fill="#161b22" stroke="#8b949e"/>
+    <text x="95" y="90" fill="#e6edf3">miapp.com.co</text>
+    <text x="95" y="106" font-size="10.5" fill="#8b949e">HTTPS</text>
+    <rect x="20" y="176" width="150" height="44" rx="6" fill="#161b22" stroke="#8b949e"/>
+    <text x="95" y="196" fill="#e6edf3">api.miapp.com.co</text>
+    <text x="95" y="212" font-size="10.5" fill="#8b949e">HTTPS</text>
+  </g>
+
+  <!-- Servidor -->
+  <rect x="230" y="50" width="550" height="210" rx="8" fill="none" stroke="#21262d" stroke-dasharray="6 4"/>
+  <text x="250" y="72" font-size="12" font-weight="700" fill="#8b949e">SERVIDOR · solo 80 y 443 abiertos</text>
+
+  <g font-size="12" text-anchor="middle">
+    <rect x="260" y="100" width="150" height="100" rx="6" fill="#0d2040" stroke="#1565c0"/>
+    <text x="335" y="128" font-weight="700" fill="#58a6ff">Reverse proxy</text>
+    <text x="335" y="148" fill="#e6edf3">Caddy</text>
+    <text x="335" y="168" font-size="10.5" fill="#8b949e">TLS · decide por Host</text>
+    <text x="335" y="184" font-size="10.5" fill="#8b949e">X-Forwarded-*</text>
+
+    <rect x="500" y="84" width="240" height="44" rx="6" fill="#161b22" stroke="#3fb950"/>
+    <text x="620" y="104" fill="#3fb950">Frontend estático</text>
+    <text x="620" y="120" font-size="10.5" fill="#8b949e">/srv/frontend</text>
+
+    <rect x="500" y="148" width="240" height="44" rx="6" fill="#161b22" stroke="#3fb950"/>
+    <text x="620" y="168" fill="#3fb950">API</text>
+    <text x="620" y="184" font-size="10.5" fill="#8b949e">api:8000 · HTTP en red interna</text>
+
+    <rect x="500" y="206" width="240" height="40" rx="6" fill="#161b22" stroke="#21262d"/>
+    <text x="620" y="231" fill="#8b949e">Base de datos · nunca expuesta</text>
+  </g>
+
+  <g stroke="#58a6ff" stroke-width="1.5" fill="none">
+    <line x1="170" y1="92" x2="258" y2="130" marker-end="url(#a)"/>
+    <line x1="170" y1="198" x2="258" y2="170" marker-end="url(#a)"/>
+    <line x1="410" y1="130" x2="498" y2="106" marker-end="url(#a)"/>
+    <line x1="410" y1="170" x2="498" y2="170" marker-end="url(#a)"/>
+  </g>
+  <line x1="620" y1="192" x2="620" y2="204" stroke="#8b949e" stroke-width="1.5"/>
+
+  <text x="400" y="286" font-size="12" fill="#8b949e" text-anchor="middle">Ambos nombres apuntan a la misma IP; el encabezado Host decide a qué servicio va cada petición</text>
+</svg>

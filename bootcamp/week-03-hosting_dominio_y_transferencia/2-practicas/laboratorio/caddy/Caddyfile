@@ -1,0 +1,15 @@
+# Dos sitios en el mismo servidor, diferenciados por nombre de dominio (virtual hosts).
+# `tls internal`: Caddy firma el certificado con su propia CA de laboratorio.
+# En un servidor real con dominio público se quita esa línea y Caddy obtiene
+# un certificado de Let's Encrypt automáticamente.
+
+sitio.lab.test {
+	tls internal
+	root * /srv/sitio
+	file_server
+}
+
+api.lab.test {
+	tls internal
+	reverse_proxy api:80
+}

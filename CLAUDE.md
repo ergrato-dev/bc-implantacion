@@ -39,5 +39,5 @@ esa tabla; verifícalo con el agente `rap-trazabilidad-reviewer`.
 
 ## Estado
 
-Semanas 1-2 completas. Semanas 3-10: READMEs y rúbricas con `🚧`, subcarpetas vacías con `.gitkeep`,
+Semanas 1-3 completas. Semanas 4-10: READMEs y rúbricas con `🚧`, subcarpetas vacías con `.gitkeep`,
 `referencia/` sin código.
