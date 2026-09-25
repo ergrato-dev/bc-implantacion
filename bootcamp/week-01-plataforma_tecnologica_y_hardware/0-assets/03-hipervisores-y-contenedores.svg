@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 340" width="800" height="340" font-family="Inter,Roboto,'Open Sans',system-ui,sans-serif">
+  <rect width="800" height="340" fill="#0d1117"/>
+  <text x="400" y="30" font-size="17" font-weight="700" fill="#e6edf3" text-anchor="middle">Hipervisor tipo 1, tipo 2 y contenedores</text>
+
+  <!-- ===== Tipo 1 ===== -->
+  <text x="140" y="60" font-size="14" font-weight="700" fill="#58a6ff" text-anchor="middle">Tipo 1 (bare metal)</text>
+  <g font-size="11" text-anchor="middle">
+    <rect x="30" y="116" width="105" height="30" rx="4" fill="#1c2a3a"/><text x="82" y="135" fill="#e6edf3">App</text>
+    <rect x="145" y="116" width="105" height="30" rx="4" fill="#1c2a3a"/><text x="197" y="135" fill="#e6edf3">App</text>
+    <rect x="30" y="150" width="105" height="30" rx="4" fill="#12301c"/><text x="82" y="169" fill="#3fb950">SO invitado</text>
+    <rect x="145" y="150" width="105" height="30" rx="4" fill="#12301c"/><text x="197" y="169" fill="#3fb950">SO invitado</text>
+    <rect x="30" y="190" width="220" height="34" rx="4" fill="#0d2040" stroke="#1565c0"/><text x="140" y="211" font-weight="700" fill="#58a6ff">Hipervisor (ESXi, Proxmox, KVM)</text>
+    <rect x="30" y="232" width="220" height="34" rx="4" fill="#21262d"/><text x="140" y="253" fill="#e6edf3">Hardware</text>
+  </g>
+  <text x="140" y="296" font-size="12" fill="#8b949e" text-anchor="middle">Producción · rendimiento casi nativo</text>
+
+  <!-- ===== Tipo 2 ===== -->
+  <text x="400" y="60" font-size="14" font-weight="700" fill="#58a6ff" text-anchor="middle">Tipo 2 (hosted)</text>
+  <g font-size="11" text-anchor="middle">
+    <rect x="290" y="74" width="105" height="30" rx="4" fill="#1c2a3a"/><text x="342" y="93" fill="#e6edf3">App</text>
+    <rect x="405" y="74" width="105" height="30" rx="4" fill="#1c2a3a"/><text x="457" y="93" fill="#e6edf3">App</text>
+    <rect x="290" y="108" width="105" height="30" rx="4" fill="#12301c"/><text x="342" y="127" fill="#3fb950">SO invitado</text>
+    <rect x="405" y="108" width="105" height="30" rx="4" fill="#12301c"/><text x="457" y="127" fill="#3fb950">SO invitado</text>
+    <rect x="290" y="148" width="220" height="34" rx="4" fill="#0d2040" stroke="#1565c0"/><text x="400" y="169" font-weight="700" fill="#58a6ff">Hipervisor (VirtualBox)</text>
+    <rect x="290" y="190" width="220" height="34" rx="4" fill="#3a2a10"/><text x="400" y="211" fill="#d29922">SO anfitrión</text>
+    <rect x="290" y="232" width="220" height="34" rx="4" fill="#21262d"/><text x="400" y="253" fill="#e6edf3">Hardware</text>
+  </g>
+  <text x="400" y="296" font-size="12" fill="#8b949e" text-anchor="middle">Laboratorio · portátil</text>
+
+  <!-- ===== Contenedores ===== -->
+  <text x="660" y="60" font-size="14" font-weight="700" fill="#58a6ff" text-anchor="middle">Contenedores</text>
+  <g font-size="11" text-anchor="middle">
+    <rect x="550" y="74" width="68" height="64" rx="4" fill="#1c2a3a"/><text x="584" y="104" fill="#e6edf3">App</text><text x="584" y="120" fill="#8b949e">+ libs</text>
+    <rect x="626" y="74" width="68" height="64" rx="4" fill="#1c2a3a"/><text x="660" y="104" fill="#e6edf3">App</text><text x="660" y="120" fill="#8b949e">+ libs</text>
+    <rect x="702" y="74" width="68" height="64" rx="4" fill="#1c2a3a"/><text x="736" y="104" fill="#e6edf3">DB</text><text x="736" y="120" fill="#8b949e">+ libs</text>
+    <rect x="550" y="148" width="220" height="34" rx="4" fill="#0d2040" stroke="#1565c0"/><text x="660" y="169" font-weight="700" fill="#58a6ff">Motor (Docker, Podman)</text>
+    <rect x="550" y="190" width="220" height="34" rx="4" fill="#3a2a10"/><text x="660" y="211" fill="#d29922">SO anfitrión · kernel compartido</text>
+    <rect x="550" y="232" width="220" height="34" rx="4" fill="#21262d"/><text x="660" y="253" fill="#e6edf3">Hardware (o una VM)</text>
+  </g>
+  <text x="660" y="296" font-size="12" fill="#8b949e" text-anchor="middle">MB · arranque en segundos</text>
+
+  <text x="400" y="326" font-size="12" fill="#e6edf3" text-anchor="middle">Lo más común hoy: hardware → hipervisor tipo 1 → VM Linux → Docker → contenedores</text>
+</svg>

@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 330" width="800" height="330" font-family="Inter,Roboto,'Open Sans',system-ui,sans-serif">
+  <rect width="800" height="330" fill="#0d1117"/>
+  <text x="400" y="30" font-size="17" font-weight="700" fill="#e6edf3" text-anchor="middle">Niveles RAID más usados</text>
+
+  <!-- Estilos de bloques: dato = azul, copia = verde, paridad = ámbar -->
+
+  <!-- ===== RAID 0 ===== -->
+  <rect x="15" y="48" width="180" height="265" rx="8" fill="#161b22" stroke="#21262d"/>
+  <text x="105" y="72" font-size="14" font-weight="700" fill="#58a6ff" text-anchor="middle">RAID 0 · striping</text>
+  <g font-size="11" text-anchor="middle">
+    <rect x="35" y="86" width="60" height="130" rx="6" fill="#0d1117" stroke="#30363d"/>
+    <rect x="115" y="86" width="60" height="130" rx="6" fill="#0d1117" stroke="#30363d"/>
+    <rect x="43" y="96" width="44" height="22" rx="3" fill="#1c2a3a"/><text x="65" y="111" fill="#e6edf3">A1</text>
+    <rect x="123" y="96" width="44" height="22" rx="3" fill="#1c2a3a"/><text x="145" y="111" fill="#e6edf3">A2</text>
+    <rect x="43" y="124" width="44" height="22" rx="3" fill="#1c2a3a"/><text x="65" y="139" fill="#e6edf3">A3</text>
+    <rect x="123" y="124" width="44" height="22" rx="3" fill="#1c2a3a"/><text x="145" y="139" fill="#e6edf3">A4</text>
+    <text x="65" y="232" fill="#8b949e">Disco 1</text><text x="145" y="232" fill="#8b949e">Disco 2</text>
+  </g>
+  <text x="105" y="262" font-size="12" fill="#e6edf3" text-anchor="middle">Capacidad: n × C</text>
+  <text x="105" y="284" font-size="12" font-weight="700" fill="#f85149" text-anchor="middle">Tolera 0 fallos</text>
+
+  <!-- ===== RAID 1 ===== -->
+  <rect x="210" y="48" width="180" height="265" rx="8" fill="#161b22" stroke="#21262d"/>
+  <text x="300" y="72" font-size="14" font-weight="700" fill="#58a6ff" text-anchor="middle">RAID 1 · espejo</text>
+  <g font-size="11" text-anchor="middle">
+    <rect x="230" y="86" width="60" height="130" rx="6" fill="#0d1117" stroke="#30363d"/>
+    <rect x="310" y="86" width="60" height="130" rx="6" fill="#0d1117" stroke="#30363d"/>
+    <rect x="238" y="96" width="44" height="22" rx="3" fill="#1c2a3a"/><text x="260" y="111" fill="#e6edf3">A1</text>
+    <rect x="318" y="96" width="44" height="22" rx="3" fill="#12301c"/><text x="340" y="111" fill="#3fb950">A1</text>
+    <rect x="238" y="124" width="44" height="22" rx="3" fill="#1c2a3a"/><text x="260" y="139" fill="#e6edf3">A2</text>
+    <rect x="318" y="124" width="44" height="22" rx="3" fill="#12301c"/><text x="340" y="139" fill="#3fb950">A2</text>
+    <text x="260" y="232" fill="#8b949e">Disco 1</text><text x="340" y="232" fill="#8b949e">Disco 2</text>
+  </g>
+  <text x="300" y="262" font-size="12" fill="#e6edf3" text-anchor="middle">Capacidad: C</text>
+  <text x="300" y="284" font-size="12" font-weight="700" fill="#3fb950" text-anchor="middle">Tolera n − 1 fallos</text>
+
+  <!-- ===== RAID 5 ===== -->
+  <rect x="405" y="48" width="180" height="265" rx="8" fill="#161b22" stroke="#21262d"/>
+  <text x="495" y="72" font-size="14" font-weight="700" fill="#58a6ff" text-anchor="middle">RAID 5 · paridad</text>
+  <g font-size="11" text-anchor="middle">
+    <rect x="415" y="86" width="50" height="130" rx="6" fill="#0d1117" stroke="#30363d"/>
+    <rect x="470" y="86" width="50" height="130" rx="6" fill="#0d1117" stroke="#30363d"/>
+    <rect x="525" y="86" width="50" height="130" rx="6" fill="#0d1117" stroke="#30363d"/>
+    <rect x="421" y="96" width="38" height="22" rx="3" fill="#1c2a3a"/><text x="440" y="111" fill="#e6edf3">A1</text>
+    <rect x="476" y="96" width="38" height="22" rx="3" fill="#1c2a3a"/><text x="495" y="111" fill="#e6edf3">A2</text>
+    <rect x="531" y="96" width="38" height="22" rx="3" fill="#3a2a10"/><text x="550" y="111" fill="#d29922">Pa</text>
+    <rect x="421" y="124" width="38" height="22" rx="3" fill="#1c2a3a"/><text x="440" y="139" fill="#e6edf3">B1</text>
+    <rect x="476" y="124" width="38" height="22" rx="3" fill="#3a2a10"/><text x="495" y="139" fill="#d29922">Pb</text>
+    <rect x="531" y="124" width="38" height="22" rx="3" fill="#1c2a3a"/><text x="550" y="139" fill="#e6edf3">B2</text>
+    <rect x="421" y="152" width="38" height="22" rx="3" fill="#3a2a10"/><text x="440" y="167" fill="#d29922">Pc</text>
+    <rect x="476" y="152" width="38" height="22" rx="3" fill="#1c2a3a"/><text x="495" y="167" fill="#e6edf3">C1</text>
+    <rect x="531" y="152" width="38" height="22" rx="3" fill="#1c2a3a"/><text x="550" y="167" fill="#e6edf3">C2</text>
+    <text x="440" y="232" fill="#8b949e">D1</text><text x="495" y="232" fill="#8b949e">D2</text><text x="550" y="232" fill="#8b949e">D3</text>
+  </g>
+  <text x="495" y="262" font-size="12" fill="#e6edf3" text-anchor="middle">Capacidad: (n − 1) × C</text>
+  <text x="495" y="284" font-size="12" font-weight="700" fill="#d29922" text-anchor="middle">Tolera 1 fallo</text>
+
+  <!-- ===== RAID 10 ===== -->
+  <rect x="600" y="48" width="185" height="265" rx="8" fill="#161b22" stroke="#21262d"/>
+  <text x="692" y="72" font-size="14" font-weight="700" fill="#58a6ff" text-anchor="middle">RAID 10 · 1 + 0</text>
+  <g font-size="11" text-anchor="middle">
+    <rect x="608" y="86" width="82" height="130" rx="6" fill="none" stroke="#1565c0" stroke-dasharray="4 3"/>
+    <rect x="695" y="86" width="82" height="130" rx="6" fill="none" stroke="#1565c0" stroke-dasharray="4 3"/>
+    <rect x="613" y="96" width="36" height="22" rx="3" fill="#1c2a3a"/><text x="631" y="111" fill="#e6edf3">A1</text>
+    <rect x="650" y="96" width="36" height="22" rx="3" fill="#12301c"/><text x="668" y="111" fill="#3fb950">A1</text>
+    <rect x="700" y="96" width="36" height="22" rx="3" fill="#1c2a3a"/><text x="718" y="111" fill="#e6edf3">A2</text>
+    <rect x="737" y="96" width="36" height="22" rx="3" fill="#12301c"/><text x="755" y="111" fill="#3fb950">A2</text>
+    <rect x="613" y="124" width="36" height="22" rx="3" fill="#1c2a3a"/><text x="631" y="139" fill="#e6edf3">A3</text>
+    <rect x="650" y="124" width="36" height="22" rx="3" fill="#12301c"/><text x="668" y="139" fill="#3fb950">A3</text>
+    <rect x="700" y="124" width="36" height="22" rx="3" fill="#1c2a3a"/><text x="718" y="139" fill="#e6edf3">A4</text>
+    <rect x="737" y="124" width="36" height="22" rx="3" fill="#12301c"/><text x="755" y="139" fill="#3fb950">A4</text>
+    <text x="649" y="232" fill="#8b949e">Espejo 1</text><text x="736" y="232" fill="#8b949e">Espejo 2</text>
+  </g>
+  <text x="692" y="262" font-size="12" fill="#e6edf3" text-anchor="middle">Capacidad: (n / 2) × C</text>
+  <text x="692" y="284" font-size="12" font-weight="700" fill="#3fb950" text-anchor="middle">1 fallo por espejo</text>
+</svg>

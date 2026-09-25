@@ -39,5 +39,5 @@ esa tabla; verifícalo con el agente `rap-trazabilidad-reviewer`.
 
 ## Estado
 
-Esqueleto: READMEs y rúbricas de semana con `🚧`, subcarpetas vacías con `.gitkeep`,
+Semana 1 completa. Semanas 2-10: READMEs y rúbricas con `🚧`, subcarpetas vacías con `.gitkeep`,
 `referencia/` sin código.
