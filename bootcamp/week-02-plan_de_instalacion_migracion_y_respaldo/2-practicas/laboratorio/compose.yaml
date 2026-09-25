@@ -1,0 +1,23 @@
+# Laboratorio de la semana 2: PostgreSQL con datos sintéticos de una biblioteca.
+# Uso: docker compose up -d   (desde esta carpeta)
+services:
+  db:
+    image: postgres:17-alpine
+    container_name: lab-biblioteca-db
+    environment:
+      POSTGRES_USER: biblioteca
+      POSTGRES_PASSWORD: biblioteca-lab   # solo laboratorio, nunca en producción
+      POSTGRES_DB: biblioteca
+    # Sin "ports": todas las prácticas usan `docker compose exec`, así no choca con otro PostgreSQL local.
+    volumes:
+      - datos:/var/lib/postgresql/data
+      - ./initdb:/docker-entrypoint-initdb.d:ro
+      - ./datos-legados:/datos-legados:ro
+      - ./respaldos:/respaldos
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U biblioteca -d biblioteca"]
+      interval: 5s
+      retries: 10
+
+volumes:
+  datos:

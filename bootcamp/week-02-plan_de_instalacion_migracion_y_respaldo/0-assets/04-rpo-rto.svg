@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 220" width="800" height="220" font-family="Inter,Roboto,'Open Sans',system-ui,sans-serif">
+  <rect width="800" height="220" fill="#0d1117"/>
+  <text x="400" y="30" font-size="17" font-weight="700" fill="#e6edf3" text-anchor="middle">RPO y RTO</text>
+
+  <defs>
+    <marker id="punta" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#8b949e"/>
+    </marker>
+  </defs>
+
+  <!-- Línea de tiempo -->
+  <line x1="40" y1="110" x2="770" y2="110" stroke="#8b949e" stroke-width="2" marker-end="url(#punta)"/>
+  <text x="770" y="132" font-size="11" fill="#8b949e" text-anchor="end">tiempo</text>
+
+  <!-- Tramos -->
+  <rect x="200" y="96" width="220" height="28" fill="#3a1414" opacity="0.9"/>
+  <rect x="420" y="96" width="260" height="28" fill="#3a2a10" opacity="0.9"/>
+
+  <!-- Eventos -->
+  <g font-size="12" text-anchor="middle">
+    <line x1="200" y1="70" x2="200" y2="136" stroke="#3fb950" stroke-width="2"/>
+    <text x="200" y="62" font-weight="700" fill="#3fb950">Último respaldo</text>
+
+    <line x1="420" y1="70" x2="420" y2="136" stroke="#f85149" stroke-width="2"/>
+    <text x="420" y="62" font-weight="700" fill="#f85149">Falla</text>
+
+    <line x1="680" y1="70" x2="680" y2="136" stroke="#58a6ff" stroke-width="2"/>
+    <text x="680" y="62" font-weight="700" fill="#58a6ff">Servicio restaurado</text>
+  </g>
+
+  <g font-size="12" text-anchor="middle">
+    <text x="310" y="115" font-weight="700" fill="#f85149">datos perdidos</text>
+    <text x="550" y="115" font-weight="700" fill="#d29922">tiempo sin servicio</text>
+  </g>
+
+  <g text-anchor="middle">
+    <text x="310" y="160" font-size="15" font-weight="800" fill="#f85149">RPO</text>
+    <text x="310" y="180" font-size="11" fill="#8b949e">¿Cuántos datos puedo perder?</text>
+    <text x="310" y="196" font-size="11" fill="#8b949e">Lo reduce: respaldar más seguido</text>
+
+    <text x="550" y="160" font-size="15" font-weight="800" fill="#d29922">RTO</text>
+    <text x="550" y="180" font-size="11" fill="#8b949e">¿Cuánto tiempo puedo estar caído?</text>
+    <text x="550" y="196" font-size="11" fill="#8b949e">Lo reduce: restauración probada</text>
+  </g>
+</svg>

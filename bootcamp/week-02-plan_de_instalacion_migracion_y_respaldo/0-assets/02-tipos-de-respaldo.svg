@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" width="800" height="300" font-family="Inter,Roboto,'Open Sans',system-ui,sans-serif">
+  <rect width="800" height="300" fill="#0d1117"/>
+  <text x="400" y="30" font-size="17" font-weight="700" fill="#e6edf3" text-anchor="middle">Completo, incremental y diferencial</text>
+
+  <!-- Encabezado de días -->
+  <g font-size="12" fill="#8b949e" text-anchor="middle">
+    <text x="250" y="62">Domingo</text><text x="360" y="62">Lunes</text><text x="470" y="62">Martes</text><text x="580" y="62">Miércoles</text>
+  </g>
+
+  <!-- Fila incremental -->
+  <text x="20" y="108" font-size="13" font-weight="700" fill="#58a6ff">Incremental</text>
+  <text x="20" y="126" font-size="10.5" fill="#8b949e">cambios desde el último respaldo</text>
+  <g font-size="11" text-anchor="middle">
+    <rect x="205" y="84" width="90" height="40" rx="5" fill="#0d2040" stroke="#1565c0"/><text x="250" y="108" fill="#e6edf3">Completo</text>
+    <rect x="330" y="92" width="60" height="24" rx="4" fill="#12301c" stroke="#3fb950"/><text x="360" y="108" fill="#3fb950">Lun</text>
+    <rect x="440" y="92" width="60" height="24" rx="4" fill="#12301c" stroke="#3fb950"/><text x="470" y="108" fill="#3fb950">Mar</text>
+    <rect x="550" y="92" width="60" height="24" rx="4" fill="#12301c" stroke="#3fb950"/><text x="580" y="108" fill="#3fb950">Mié</text>
+  </g>
+  <text x="628" y="100" font-size="10.5" fill="#e6edf3">Restaurar miércoles:</text>
+  <text x="628" y="116" font-size="10.5" fill="#d29922">Completo + 3 incrementales</text>
+
+  <!-- Fila diferencial -->
+  <text x="20" y="188" font-size="13" font-weight="700" fill="#58a6ff">Diferencial</text>
+  <text x="20" y="206" font-size="10.5" fill="#8b949e">cambios desde el último completo</text>
+  <g font-size="11" text-anchor="middle">
+    <rect x="205" y="164" width="90" height="40" rx="5" fill="#0d2040" stroke="#1565c0"/><text x="250" y="188" fill="#e6edf3">Completo</text>
+    <rect x="330" y="172" width="60" height="24" rx="4" fill="#3a2a10" stroke="#d29922"/><text x="360" y="188" fill="#d29922">Lun</text>
+    <rect x="430" y="172" width="80" height="24" rx="4" fill="#3a2a10" stroke="#d29922"/><text x="470" y="188" fill="#d29922">Lun–Mar</text>
+    <rect x="530" y="172" width="100" height="24" rx="4" fill="#3a2a10" stroke="#d29922"/><text x="580" y="188" fill="#d29922">Lun–Mié</text>
+  </g>
+  <text x="628" y="180" font-size="10.5" fill="#e6edf3">Restaurar miércoles:</text>
+  <text x="628" y="196" font-size="10.5" fill="#d29922">Completo + Lun–Mié</text>
+
+  <!-- Resumen -->
+  <rect x="20" y="232" width="760" height="52" rx="6" fill="#161b22" stroke="#21262d"/>
+  <text x="400" y="254" font-size="12" fill="#e6edf3" text-anchor="middle">Incremental: menos espacio, restauración más larga y frágil (si falta uno, se rompe la cadena)</text>
+  <text x="400" y="274" font-size="12" fill="#e6edf3" text-anchor="middle">Diferencial: crece cada día, restauración con solo dos piezas</text>
+</svg>

@@ -1,0 +1,21 @@
+codigo;nombre_completo;correo;fecha_alta;telefono
+9000001;  ana maria lopez ;ANA.LOPEZ@EJEMPLO.TEST;15/03/2019;3000000001
+9000002;carlos perez;carlos.perez@ejemplo.test;02/07/2019;3000000002
+9000003;LUISA FERNANDA GOMEZ;luisa.gomez@ejemplo.test;28/11/2019;
+9000004;jorge ruiz;Jorge.Ruiz@Ejemplo.Test ;10/01/2020;3000000004
+9000005;maria jose diaz;;05/02/2020;3000000005
+9000006;pedro sanchez;pedro.sanchez@ejemplo.test;31/02/2020;3000000006
+9000007;camila torres;camila.torres@ejemplo.test;17/06/2020;3000000007
+9000008;andres castro;andres.castro@ejemplo.test;22/09/2020;3000000008
+9000009;Ana Maria Lopez;ana.lopez@ejemplo.test;01/12/2021;3000000001
+9000010;sofia herrera;sofia.herrera@ejemplo.test;14/04/2021;3000000010
+9000011;diego morales;diego.morales@ejemplo.test;30/08/2021;3000000011
+9000012;valentina rojas;socio7@ejemplo.test;09/10/2021;3000000012
+9000013;julian vargas;julian.vargas@ejemplo.test;19/01/2022;3000000013
+9000014;daniela ortiz;daniela.ortiz@ejemplo.test;03/05/2022;3000000014
+9000015;santiago mendoza;santiago.mendoza@ejemplo.test;25/07/2022;3000000015
+9000016;paula jimenez;paula.jimenez@ejemplo.test;11/11/2022;3000000016
+9000017;felipe navarro;felipe.navarro@ejemplo.test;06/02/2023;3000000017
+9000018;natalia reyes;natalia.reyes@ejemplo.test;18/06/2023;3000000018
+9000019;sebastian cruz;sebastian.cruz@ejemplo.test;29/09/2023;3000000019
+9000020;laura medina;laura.medina@ejemplo.test;13/12/2023;3000000020

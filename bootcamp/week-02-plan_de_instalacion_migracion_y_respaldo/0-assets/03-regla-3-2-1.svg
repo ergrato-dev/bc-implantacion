@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 280" width="800" height="280" font-family="Inter,Roboto,'Open Sans',system-ui,sans-serif">
+  <rect width="800" height="280" fill="#0d1117"/>
+  <text x="400" y="32" font-size="17" font-weight="700" fill="#e6edf3" text-anchor="middle">Regla 3-2-1</text>
+
+  <!-- Sitio principal -->
+  <rect x="20" y="54" width="480" height="180" rx="8" fill="#161b22" stroke="#21262d"/>
+  <text x="40" y="78" font-size="13" font-weight="700" fill="#8b949e">SITIO PRINCIPAL</text>
+
+  <g font-size="12" text-anchor="middle">
+    <rect x="44" y="96" width="200" height="110" rx="6" fill="#0d2040" stroke="#1565c0"/>
+    <text x="144" y="124" font-weight="700" fill="#58a6ff">Copia 1 · original</text>
+    <text x="144" y="148" fill="#e6edf3">Base de producción</text>
+    <text x="144" y="168" fill="#8b949e">Medio A: disco del servidor</text>
+
+    <rect x="276" y="96" width="200" height="110" rx="6" fill="#12301c" stroke="#3fb950"/>
+    <text x="376" y="124" font-weight="700" fill="#3fb950">Copia 2 · respaldo</text>
+    <text x="376" y="148" fill="#e6edf3">pg_dump diario</text>
+    <text x="376" y="168" fill="#8b949e">Medio B: disco externo / NAS</text>
+  </g>
+
+  <!-- Fuera del sitio -->
+  <rect x="530" y="54" width="250" height="180" rx="8" fill="#161b22" stroke="#21262d" stroke-dasharray="6 4"/>
+  <text x="550" y="78" font-size="13" font-weight="700" fill="#8b949e">FUERA DEL SITIO</text>
+  <g font-size="12" text-anchor="middle">
+    <rect x="555" y="96" width="200" height="110" rx="6" fill="#3a2a10" stroke="#d29922"/>
+    <text x="655" y="124" font-weight="700" fill="#d29922">Copia 3 · respaldo</text>
+    <text x="655" y="148" fill="#e6edf3">Almacenamiento en la nube</text>
+    <text x="655" y="168" fill="#8b949e">Cifrado · otra región / sede</text>
+  </g>
+
+  <g font-size="13" font-weight="700" text-anchor="middle">
+    <text x="160" y="262" fill="#58a6ff">3 copias</text>
+    <text x="400" y="262" fill="#3fb950">2 medios distintos</text>
+    <text x="640" y="262" fill="#d29922">1 fuera del sitio</text>
+  </g>
+</svg>

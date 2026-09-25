@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 260" width="800" height="260" font-family="Inter,Roboto,'Open Sans',system-ui,sans-serif">
+  <rect width="800" height="260" fill="#0d1117"/>
+  <text x="400" y="32" font-size="17" font-weight="700" fill="#e6edf3" text-anchor="middle">Etapas de un plan de migración</text>
+
+  <defs>
+    <marker id="flecha" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#58a6ff"/>
+    </marker>
+  </defs>
+
+  <g font-size="12" text-anchor="middle">
+    <rect x="14" y="60" width="96" height="64" rx="6" fill="#161b22" stroke="#1565c0"/>
+    <text x="62" y="84" font-weight="700" fill="#58a6ff">1</text><text x="62" y="104" fill="#e6edf3">Análisis</text>
+
+    <rect x="126" y="60" width="96" height="64" rx="6" fill="#161b22" stroke="#1565c0"/>
+    <text x="174" y="84" font-weight="700" fill="#58a6ff">2</text><text x="174" y="104" fill="#e6edf3">Mapeo</text>
+
+    <rect x="238" y="60" width="96" height="64" rx="6" fill="#161b22" stroke="#1565c0"/>
+    <text x="286" y="84" font-weight="700" fill="#58a6ff">3</text><text x="286" y="104" fill="#e6edf3">Preparación</text>
+
+    <rect x="350" y="60" width="96" height="64" rx="6" fill="#161b22" stroke="#1565c0"/>
+    <text x="398" y="84" font-weight="700" fill="#58a6ff">4</text><text x="398" y="104" fill="#e6edf3">Ensayo</text>
+
+    <rect x="462" y="60" width="96" height="64" rx="6" fill="#0d2040" stroke="#58a6ff" stroke-width="1.5"/>
+    <text x="510" y="84" font-weight="700" fill="#58a6ff">5</text><text x="510" y="104" fill="#e6edf3">Ejecución</text>
+
+    <rect x="574" y="60" width="96" height="64" rx="6" fill="#161b22" stroke="#1565c0"/>
+    <text x="622" y="84" font-weight="700" fill="#58a6ff">6</text><text x="622" y="104" fill="#e6edf3">Validación</text>
+
+    <rect x="686" y="46" width="100" height="40" rx="6" fill="#12301c" stroke="#3fb950"/>
+    <text x="736" y="71" font-weight="700" fill="#3fb950">7a Cierre</text>
+    <rect x="686" y="98" width="100" height="40" rx="6" fill="#3a1414" stroke="#f85149"/>
+    <text x="736" y="123" font-weight="700" fill="#f85149">7b Rollback</text>
+  </g>
+
+  <g stroke="#58a6ff" stroke-width="1.5" marker-end="url(#flecha)">
+    <line x1="110" y1="92" x2="124" y2="92"/>
+    <line x1="222" y1="92" x2="236" y2="92"/>
+    <line x1="334" y1="92" x2="348" y2="92"/>
+    <line x1="446" y1="92" x2="460" y2="92"/>
+    <line x1="558" y1="92" x2="572" y2="92"/>
+    <line x1="670" y1="84" x2="684" y2="68"/>
+    <line x1="670" y1="100" x2="684" y2="116"/>
+  </g>
+
+  <!-- Entregables -->
+  <g font-size="10.5" fill="#8b949e" text-anchor="middle">
+    <text x="62" y="146">Inventario</text><text x="62" y="160">y volúmenes</text>
+    <text x="174" y="146">Tabla de mapeo</text><text x="174" y="160">y rechazos</text>
+    <text x="286" y="146">Respaldo</text><text x="286" y="160">verificado</text>
+    <text x="398" y="146">Prueba con</text><text x="398" y="160">copia de datos</text>
+    <text x="510" y="146">Dentro de la</text><text x="510" y="160">ventana</text>
+    <text x="622" y="146">Conteos,</text><text x="622" y="160">checksum</text>
+  </g>
+
+  <!-- Bucle de ensayo -->
+  <path d="M398,176 C398,212 174,212 174,176" fill="none" stroke="#d29922" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#flechaAmbar)"/>
+  <defs>
+    <marker id="flechaAmbar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#d29922"/>
+    </marker>
+  </defs>
+  <text x="286" y="228" font-size="11" fill="#d29922" text-anchor="middle">Si el ensayo falla: se ajusta el mapeo y se repite</text>
+
+  <text x="400" y="252" font-size="11" fill="#8b949e" text-anchor="middle">El rollback siempre parte del respaldo de la etapa 3</text>
+</svg>
