@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 360" width="800" height="360" font-family="Inter,Roboto,'Open Sans',system-ui,sans-serif">
+  <rect width="800" height="360" fill="#0d1117"/>
+  <text x="400" y="30" font-size="17" font-weight="700" fill="#e6edf3" text-anchor="middle">¿Quién administra cada capa?</text>
+
+  <!-- Etiquetas de capas -->
+  <g font-size="12" fill="#8b949e" text-anchor="end">
+    <text x="150" y="87">Datos y usuarios</text>
+    <text x="150" y="119">Aplicación</text>
+    <text x="150" y="151">Runtime</text>
+    <text x="150" y="183">Sistema operativo</text>
+    <text x="150" y="215">Virtualización</text>
+    <text x="150" y="247">Servidores y discos</text>
+    <text x="150" y="279">Red y centro de datos</text>
+  </g>
+
+  <!-- Columnas: tú = azul, proveedor = gris -->
+  <g font-size="13" font-weight="700" fill="#e6edf3" text-anchor="middle">
+    <text x="225" y="60">On-premise</text>
+    <text x="375" y="60">IaaS</text>
+    <text x="525" y="60">PaaS</text>
+    <text x="675" y="60">SaaS</text>
+  </g>
+
+  <!-- On-premise: todo tú -->
+  <g fill="#0d2040" stroke="#1565c0">
+    <rect x="165" y="72" width="120" height="26" rx="3"/><rect x="165" y="104" width="120" height="26" rx="3"/>
+    <rect x="165" y="136" width="120" height="26" rx="3"/><rect x="165" y="168" width="120" height="26" rx="3"/>
+    <rect x="165" y="200" width="120" height="26" rx="3"/><rect x="165" y="232" width="120" height="26" rx="3"/>
+    <rect x="165" y="264" width="120" height="26" rx="3"/>
+  </g>
+  <!-- IaaS: tú hasta SO -->
+  <g fill="#0d2040" stroke="#1565c0">
+    <rect x="315" y="72" width="120" height="26" rx="3"/><rect x="315" y="104" width="120" height="26" rx="3"/>
+    <rect x="315" y="136" width="120" height="26" rx="3"/><rect x="315" y="168" width="120" height="26" rx="3"/>
+  </g>
+  <g fill="#21262d" stroke="#30363d">
+    <rect x="315" y="200" width="120" height="26" rx="3"/><rect x="315" y="232" width="120" height="26" rx="3"/>
+    <rect x="315" y="264" width="120" height="26" rx="3"/>
+  </g>
+  <!-- PaaS: tú datos + app -->
+  <g fill="#0d2040" stroke="#1565c0">
+    <rect x="465" y="72" width="120" height="26" rx="3"/><rect x="465" y="104" width="120" height="26" rx="3"/>
+  </g>
+  <g fill="#21262d" stroke="#30363d">
+    <rect x="465" y="136" width="120" height="26" rx="3"/><rect x="465" y="168" width="120" height="26" rx="3"/>
+    <rect x="465" y="200" width="120" height="26" rx="3"/><rect x="465" y="232" width="120" height="26" rx="3"/>
+    <rect x="465" y="264" width="120" height="26" rx="3"/>
+  </g>
+  <!-- SaaS: tú solo datos -->
+  <g fill="#0d2040" stroke="#1565c0">
+    <rect x="615" y="72" width="120" height="26" rx="3"/>
+  </g>
+  <g fill="#21262d" stroke="#30363d">
+    <rect x="615" y="104" width="120" height="26" rx="3"/><rect x="615" y="136" width="120" height="26" rx="3"/>
+    <rect x="615" y="168" width="120" height="26" rx="3"/><rect x="615" y="200" width="120" height="26" rx="3"/>
+    <rect x="615" y="232" width="120" height="26" rx="3"/><rect x="615" y="264" width="120" height="26" rx="3"/>
+  </g>
+
+  <g font-size="10.5" fill="#8b949e" text-anchor="middle">
+    <text x="225" y="310">Servidor propio</text>
+    <text x="375" y="310">EC2, Azure VM, VPS</text>
+    <text x="525" y="310">Render, App Service</text>
+    <text x="675" y="310">Gmail, GitHub</text>
+  </g>
+
+  <!-- Leyenda -->
+  <rect x="250" y="328" width="16" height="14" rx="2" fill="#0d2040" stroke="#1565c0"/>
+  <text x="274" y="340" font-size="12" fill="#e6edf3">Tú administras</text>
+  <rect x="430" y="328" width="16" height="14" rx="2" fill="#21262d" stroke="#30363d"/>
+  <text x="454" y="340" font-size="12" fill="#e6edf3">El proveedor administra</text>
+</svg>

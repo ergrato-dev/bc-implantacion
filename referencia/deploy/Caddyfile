@@ -1,0 +1,7 @@
+# El dominio llega por variable de entorno (DOMINIO en .env).
+# Con un dominio público, Caddy obtiene el certificado de Let's Encrypt solo.
+# En laboratorio (dominio .test) descomenta `tls internal`.
+{$DOMINIO} {
+	# tls internal
+	reverse_proxy app:8000
+}

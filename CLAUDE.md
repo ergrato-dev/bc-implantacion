@@ -39,5 +39,9 @@ esa tabla; verifícalo con el agente `rap-trazabilidad-reviewer`.
 
 ## Estado
 
-Semanas 1-3 completas. Semanas 4-10: READMEs y rúbricas con `🚧`, subcarpetas vacías con `.gitkeep`,
-`referencia/` sin código.
+Semanas 1-4 completas. Semanas 5-10: READMEs y rúbricas con `🚧`, subcarpetas vacías con `.gitkeep`.
+
+`referencia/` es la app de referencia (FastAPI + React + PostgreSQL en una sola imagen). Las
+prácticas desde la semana 4 dependen de ella: si cambias endpoints, migraciones o
+`scripts/smoke-test.sh`, revisa las prácticas que los usan. Verifícala con
+`cp .env.example .env && docker compose up -d --build --wait && bash scripts/smoke-test.sh`.

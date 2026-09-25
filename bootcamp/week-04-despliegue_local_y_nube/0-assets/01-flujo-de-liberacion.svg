@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 270" width="800" height="270" font-family="Inter,Roboto,'Open Sans',system-ui,sans-serif">
+  <rect width="800" height="270" fill="#0d1117"/>
+  <text x="400" y="30" font-size="17" font-weight="700" fill="#e6edf3" text-anchor="middle">De un commit a producción, con vuelta atrás</text>
+
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#58a6ff"/>
+    </marker>
+    <marker id="r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#d29922"/>
+    </marker>
+  </defs>
+
+  <g font-size="12" text-anchor="middle">
+    <rect x="16" y="64" width="112" height="70" rx="6" fill="#161b22" stroke="#1565c0"/>
+    <text x="72" y="92" font-weight="700" fill="#58a6ff">Commit</text>
+    <text x="72" y="112" font-size="10.5" fill="#8b949e">pruebas en verde</text>
+
+    <rect x="148" y="64" width="112" height="70" rx="6" fill="#161b22" stroke="#1565c0"/>
+    <text x="204" y="92" font-weight="700" fill="#58a6ff">Etiqueta</text>
+    <text x="204" y="112" font-size="10.5" fill="#8b949e">git tag v1.1.0</text>
+
+    <rect x="280" y="64" width="112" height="70" rx="6" fill="#161b22" stroke="#1565c0"/>
+    <text x="336" y="92" font-weight="700" fill="#58a6ff">Imagen</text>
+    <text x="336" y="112" font-size="10.5" fill="#8b949e">biblioteca:1.1.0</text>
+
+    <rect x="412" y="64" width="112" height="70" rx="6" fill="#161b22" stroke="#1565c0"/>
+    <text x="468" y="92" font-weight="700" fill="#58a6ff">Transferir</text>
+    <text x="468" y="112" font-size="10.5" fill="#8b949e">registro o SFTP</text>
+
+    <rect x="544" y="64" width="112" height="70" rx="6" fill="#0d2040" stroke="#58a6ff" stroke-width="1.5"/>
+    <text x="600" y="92" font-weight="700" fill="#58a6ff">Desplegar</text>
+    <text x="600" y="112" font-size="10.5" fill="#8b949e">APP_VERSION=1.1.0</text>
+
+    <rect x="676" y="64" width="108" height="70" rx="6" fill="#12301c" stroke="#3fb950"/>
+    <text x="730" y="92" font-weight="700" fill="#3fb950">Verificar</text>
+    <text x="730" y="112" font-size="10.5" fill="#8b949e">smoke test</text>
+  </g>
+
+  <g stroke="#58a6ff" stroke-width="1.5">
+    <line x1="128" y1="99" x2="146" y2="99" marker-end="url(#a)"/>
+    <line x1="260" y1="99" x2="278" y2="99" marker-end="url(#a)"/>
+    <line x1="392" y1="99" x2="410" y2="99" marker-end="url(#a)"/>
+    <line x1="524" y1="99" x2="542" y2="99" marker-end="url(#a)"/>
+    <line x1="656" y1="99" x2="674" y2="99" marker-end="url(#a)"/>
+  </g>
+
+  <!-- Rollback -->
+  <path d="M730,134 C730,196 600,196 600,138" fill="none" stroke="#d29922" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#r)"/>
+  <text x="665" y="214" font-size="11.5" font-weight="700" fill="#d29922" text-anchor="middle">Si falla: APP_VERSION=1.0.0</text>
+  <text x="665" y="230" font-size="10.5" fill="#8b949e" text-anchor="middle">la imagen anterior sigue en el servidor</text>
+
+  <text x="270" y="190" font-size="12" fill="#e6edf3" text-anchor="middle">La misma imagen, sin reconstruir,</text>
+  <text x="270" y="208" font-size="12" fill="#e6edf3" text-anchor="middle">pasa por pruebas y llega a producción</text>
+  <text x="270" y="232" font-size="10.5" fill="#8b949e" text-anchor="middle">lo que cambia por ambiente llega por variables de entorno</text>
+</svg>

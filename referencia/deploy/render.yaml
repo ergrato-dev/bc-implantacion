@@ -1,0 +1,17 @@
+# Blueprint de Render para la app de referencia (plan gratuito).
+# La base de datos es externa (Neon o Supabase): su cadena de conexión se carga
+# a mano en el panel de Render como DATABASE_URL (sync: false = no se guarda aquí).
+# Referencia: https://render.com/docs/blueprint-spec
+services:
+  - type: web
+    name: biblioteca
+    runtime: docker
+    plan: free
+    rootDir: referencia
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /api/health
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: APP_VERSION
+        value: 1.0.0

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 250" width="800" height="250" font-family="Inter,Roboto,'Open Sans',system-ui,sans-serif">
+  <rect width="800" height="250" fill="#0d1117"/>
+  <text x="400" y="30" font-size="17" font-weight="700" fill="#e6edf3" text-anchor="middle">Versionado semántico</text>
+
+  <!-- Número grande -->
+  <g font-size="54" font-weight="800" text-anchor="middle" font-family="'Courier New',Courier,monospace">
+    <text x="250" y="110" fill="#f85149">1</text>
+    <text x="325" y="110" fill="#8b949e">.</text>
+    <text x="400" y="110" fill="#d29922">4</text>
+    <text x="475" y="110" fill="#8b949e">.</text>
+    <text x="550" y="110" fill="#3fb950">2</text>
+  </g>
+
+  <g font-size="13" font-weight="700" text-anchor="middle">
+    <text x="250" y="140" fill="#f85149">MAYOR</text>
+    <text x="400" y="140" fill="#d29922">MENOR</text>
+    <text x="550" y="140" fill="#3fb950">PARCHE</text>
+  </g>
+
+  <g font-size="11.5" text-anchor="middle" fill="#8b949e">
+    <text x="250" y="162">cambio incompatible</text>
+    <text x="400" y="162">funcionalidad nueva</text>
+    <text x="400" y="178">compatible</text>
+    <text x="550" y="162">corrección de errores</text>
+  </g>
+
+  <g font-size="12" text-anchor="middle" font-family="'Courier New',Courier,monospace">
+    <rect x="175" y="196" width="150" height="30" rx="5" fill="#3a1414" stroke="#f85149"/>
+    <text x="250" y="216" fill="#e6edf3">1.4.2 → 2.0.0</text>
+    <rect x="325" y="196" width="150" height="30" rx="5" fill="#3a2a10" stroke="#d29922" transform="translate(0,0)"/>
+    <text x="400" y="216" fill="#e6edf3">1.4.2 → 1.5.0</text>
+    <rect x="475" y="196" width="150" height="30" rx="5" fill="#12301c" stroke="#3fb950"/>
+    <text x="550" y="216" fill="#e6edf3">1.4.2 → 1.4.3</text>
+  </g>
+</svg>
