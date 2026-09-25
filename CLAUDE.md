@@ -30,6 +30,7 @@ esa tabla; verifícalo con el agente `rap-trazabilidad-reviewer`.
 
 ## Reglas que rompen fácil
 
+- **Laboratorios**: cada `compose.yaml` de laboratorio lleva `name: lab-sNN` para que las semanas no compartan proyecto de Compose (todas las carpetas se llaman `laboratorio`).
 - **Scope de commit**: `feat(week-NN)` / `fix(week-NN)`, nunca el slug completo.
 - **Datos reales**: nunca IPs, hosts, usuarios o credenciales del laboratorio institucional, ni
   datos de aprendices/instructores. Al servidor del laboratorio se le llama "VM Ubuntu del
@@ -39,7 +40,7 @@ esa tabla; verifícalo con el agente `rap-trazabilidad-reviewer`.
 
 ## Estado
 
-Semanas 1-4 completas. Semanas 5-10: READMEs y rúbricas con `🚧`, subcarpetas vacías con `.gitkeep`.
+Semanas 1-5 completas. Semanas 6-10: READMEs y rúbricas con `🚧`, subcarpetas vacías con `.gitkeep`.
 
 `referencia/` es la app de referencia (FastAPI + React + PostgreSQL en una sola imagen). Las
 prácticas desde la semana 4 dependen de ella: si cambias endpoints, migraciones o

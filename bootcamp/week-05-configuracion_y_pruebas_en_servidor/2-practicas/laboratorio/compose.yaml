@@ -1,0 +1,51 @@
+# Laboratorio de la semana 5: migrar la base de la app de referencia a un servidor
+# "gestionado" (simulado con otro PostgreSQL, versión y usuario distintos).
+# Uso: cp .env.example .env && docker compose up -d --build --wait
+name: lab-s05
+
+services:
+  origen:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: biblioteca
+      POSTGRES_PASSWORD: origen-lab
+      POSTGRES_DB: biblioteca
+    volumes:
+      - origen:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U biblioteca -d biblioteca"]
+      interval: 5s
+      retries: 10
+
+  # Simula una base gestionada en la nube: otra versión, otro usuario dueño, otra base.
+  destino:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: propietario_nube
+      POSTGRES_PASSWORD: destino-lab
+      POSTGRES_DB: nubedb
+    volumes:
+      - destino:/var/lib/postgresql/data
+      - ./sql:/sql:ro
+      - ./respaldos:/respaldos
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U propietario_nube -d nubedb"]
+      interval: 5s
+      retries: 10
+
+  app:
+    build: ../../../../referencia
+    image: biblioteca:lab-s05
+    environment:
+      DATABASE_URL: ${DATABASE_URL:?Define DATABASE_URL en .env}
+    ports:
+      - "127.0.0.1:8000:8000"
+    depends_on:
+      origen:
+        condition: service_healthy
+      destino:
+        condition: service_healthy
+
+volumes:
+  origen:
+  destino:

@@ -1,5 +1,7 @@
 # Laboratorio de la semana 2: PostgreSQL con datos sintéticos de una biblioteca.
 # Uso: docker compose up -d   (desde esta carpeta)
+name: lab-s02
+
 services:
   db:
     image: postgres:17-alpine

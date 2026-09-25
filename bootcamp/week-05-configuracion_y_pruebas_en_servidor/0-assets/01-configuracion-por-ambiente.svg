@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 290" width="800" height="290" font-family="Inter,Roboto,'Open Sans',system-ui,sans-serif">
+  <rect width="800" height="290" fill="#0d1117"/>
+  <text x="400" y="30" font-size="17" font-weight="700" fill="#e6edf3" text-anchor="middle">Una imagen, tres ambientes</text>
+
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#58a6ff"/>
+    </marker>
+  </defs>
+
+  <!-- Imagen -->
+  <rect x="300" y="50" width="200" height="54" rx="6" fill="#0d2040" stroke="#58a6ff" stroke-width="1.5"/>
+  <text x="400" y="74" font-size="13" font-weight="700" fill="#58a6ff" text-anchor="middle">biblioteca:1.1.0</text>
+  <text x="400" y="92" font-size="10.5" fill="#8b949e" text-anchor="middle">código · sin secretos · igual en todos</text>
+
+  <g stroke="#58a6ff" stroke-width="1.5">
+    <line x1="340" y1="104" x2="140" y2="146" marker-end="url(#a)"/>
+    <line x1="400" y1="104" x2="400" y2="146" marker-end="url(#a)"/>
+    <line x1="460" y1="104" x2="660" y2="146" marker-end="url(#a)"/>
+  </g>
+
+  <g font-size="12">
+    <rect x="30" y="150" width="220" height="110" rx="6" fill="#161b22" stroke="#3fb950"/>
+    <text x="140" y="172" font-weight="700" fill="#3fb950" text-anchor="middle">Desarrollo</text>
+    <text x="44" y="196" font-size="10.5" fill="#8b949e" font-family="'Courier New',Courier,monospace">.env (tu equipo)</text>
+    <text x="44" y="216" font-size="10.5" fill="#e6edf3" font-family="'Courier New',Courier,monospace">DATABASE_URL=…@db</text>
+    <text x="44" y="234" font-size="10.5" fill="#e6edf3" font-family="'Courier New',Courier,monospace">APP_VERSION=dev</text>
+
+    <rect x="290" y="150" width="220" height="110" rx="6" fill="#161b22" stroke="#d29922"/>
+    <text x="400" y="172" font-weight="700" fill="#d29922" text-anchor="middle">Servidor</text>
+    <text x="304" y="196" font-size="10.5" fill="#8b949e" font-family="'Courier New',Courier,monospace">/opt/biblioteca/.env (600)</text>
+    <text x="304" y="216" font-size="10.5" fill="#e6edf3" font-family="'Courier New',Courier,monospace">DATABASE_URL=…@db</text>
+    <text x="304" y="234" font-size="10.5" fill="#e6edf3" font-family="'Courier New',Courier,monospace">DOMINIO=biblioteca…</text>
+
+    <rect x="550" y="150" width="220" height="110" rx="6" fill="#161b22" stroke="#f85149"/>
+    <text x="660" y="172" font-weight="700" fill="#f85149" text-anchor="middle">Nube (PaaS)</text>
+    <text x="564" y="196" font-size="10.5" fill="#8b949e" font-family="'Courier New',Courier,monospace">Panel de variables</text>
+    <text x="564" y="216" font-size="10.5" fill="#e6edf3" font-family="'Courier New',Courier,monospace">DATABASE_URL=…neon…</text>
+    <text x="564" y="234" font-size="10.5" fill="#e6edf3" font-family="'Courier New',Courier,monospace">PORT=(lo define Render)</text>
+  </g>
+
+  <text x="400" y="282" font-size="11.5" fill="#8b949e" text-anchor="middle">Lo que cambia entre ambientes llega por variables de entorno; nunca se reconstruye la imagen</text>
+</svg>

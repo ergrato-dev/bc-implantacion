@@ -1,5 +1,7 @@
 # Laboratorio de la semana 3: hosting básico con reverse proxy, HTTPS y SFTP.
 # Uso: docker compose up -d --wait   (desde esta carpeta)
+name: lab-s03
+
 services:
   proxy:
     image: caddy:2-alpine
