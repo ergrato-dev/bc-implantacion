@@ -1,0 +1,5 @@
+# Estado y proveedores de OpenTofu: el estado guarda la contraseña en texto plano
+.terraform/
+.terraform.lock.hcl
+terraform.tfstate*
+.home/

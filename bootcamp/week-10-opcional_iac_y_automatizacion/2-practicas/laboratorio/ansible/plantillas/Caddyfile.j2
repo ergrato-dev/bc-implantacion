@@ -1,0 +1,7 @@
+# Generado por Ansible (instalar-biblioteca.yml). Los cambios a mano se pierden.
+{$DOMINIO} {
+{% if tls_interno %}
+	tls internal
+{% endif %}
+	reverse_proxy app:8000
+}

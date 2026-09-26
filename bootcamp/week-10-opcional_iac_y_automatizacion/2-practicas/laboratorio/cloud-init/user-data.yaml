@@ -1,0 +1,40 @@
+#cloud-config
+# Primer arranque de un Ubuntu Server nuevo: deja el servidor listo para que Ansible lo
+# configure. Se entrega al crear la VM (proveedor de nube, Multipass, Proxmox, LXD...).
+# Validar antes de usar:  cloud-init schema --config-file user-data.yaml
+#
+# Reemplaza la llave pública por la tuya. Nunca pongas contraseñas en este archivo.
+
+hostname: biblioteca-01
+timezone: America/Bogota
+
+users:
+  - name: ubuntu
+    groups: [sudo]
+    shell: /bin/bash
+    sudo: "ALL=(ALL) NOPASSWD:ALL"
+    lock_passwd: true                 # sin contraseña: solo llave
+    ssh_authorized_keys:
+      - ssh-ed25519 AAAA...reemplazar... ansible@control
+
+ssh_pwauth: false                     # SSH sin contraseñas (semana 6)
+disable_root: true
+
+package_update: true
+package_upgrade: true                 # parches pendientes antes de instalar nada
+packages:
+  - python3                           # lo necesita Ansible
+  - unattended-upgrades               # parches de seguridad automáticos (semana 8)
+
+write_files:
+  - path: /etc/ssh/sshd_config.d/10-endurecer.conf
+    permissions: "0644"
+    content: |
+      PermitRootLogin no
+      PasswordAuthentication no
+      KbdInteractiveAuthentication no
+
+runcmd:
+  - systemctl reload ssh
+
+final_message: "Servidor listo para Ansible después de $UPTIME segundos"

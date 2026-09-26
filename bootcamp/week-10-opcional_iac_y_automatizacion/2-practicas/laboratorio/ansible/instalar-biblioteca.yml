@@ -1,0 +1,133 @@
+# Plan de instalación ejecutable de la app de referencia (secciones 5 y 7 del plan).
+# Idempotente: ejecutarlo dos veces deja el servidor igual y la segunda vez no cambia nada.
+#
+# Uso (en el nodo de control):
+#   ansible-playbook instalar-biblioteca.yml --ask-vault-pass
+#   ansible-playbook instalar-biblioteca.yml --ask-vault-pass --check --diff   # qué cambiaría
+- name: Instalar la biblioteca en un Ubuntu limpio
+  hosts: biblioteca
+  become: true
+
+  tasks:
+    # --- Plataforma (sección 5.1) ---
+    - name: Paquetes del sistema
+      ansible.builtin.apt:
+        name: [docker.io, docker-buildx, docker-compose-v2, git, ufw, curl]
+        state: present
+        update_cache: true
+        cache_valid_time: 3600
+
+    - name: Docker activo y al arranque
+      ansible.builtin.service:
+        name: docker
+        state: started
+        enabled: true
+
+    # --- Seguridad (sección 7) ---
+    - name: Grupo de despliegue
+      ansible.builtin.group:
+        name: despliegue
+
+    - name: Firewall, reglas antes de activarlo
+      community.general.ufw:
+        rule: allow
+        port: "{{ item }}"
+        proto: tcp
+      loop: ["22", "80", "443"]
+
+    - name: Firewall activo, negando lo demás
+      community.general.ufw:
+        state: enabled
+        policy: deny
+        direction: incoming
+
+    # --- Instalación (sección 5.3 a 5.6) ---
+    - name: Carpeta de la instalación
+      ansible.builtin.file:
+        path: "{{ destino }}"
+        state: directory
+        owner: root
+        group: despliegue
+        mode: "2770"
+
+    - name: Código fuente de la versión
+      ansible.builtin.git:
+        repo: "{{ fuente_repo }}"
+        version: "{{ fuente_version }}"
+        dest: "{{ destino }}/fuente"
+        depth: 1
+      register: fuente
+
+    - name: Archivos de despliegue desde el código
+      ansible.builtin.copy:
+        src: "{{ destino }}/fuente/{{ fuente_subdir }}/{{ item.origen }}"
+        dest: "{{ destino }}/{{ item.destino }}"
+        remote_src: true
+        mode: "{{ item.modo }}"
+      loop:
+        - { origen: deploy/compose.prod.yaml, destino: compose.yaml, modo: "0644" }
+        - { origen: deploy/desplegar.sh, destino: desplegar.sh, modo: "0755" }
+        - { origen: scripts/smoke-test.sh, destino: smoke-test.sh, modo: "0755" }
+        - { origen: scripts/huella.sql, destino: huella.sql, modo: "0644" }
+      notify: Aplicar cambios
+
+    # Plantilla y no "copiar y luego editar": copiar el original y después modificarlo cambia
+    # el archivo en CADA ejecución (la copia lo restaura, la edición lo vuelve a cambiar).
+    - name: Configuración del proxy desde la plantilla
+      ansible.builtin.template:
+        src: plantillas/Caddyfile.j2
+        dest: "{{ destino }}/Caddyfile"
+        mode: "0644"
+      notify: Aplicar cambios
+
+    - name: Configuración (.env) desde la plantilla, sin mostrar secretos
+      ansible.builtin.template:
+        src: plantillas/env.j2
+        dest: "{{ destino }}/.env"
+        owner: root
+        group: despliegue
+        mode: "0640"
+      no_log: true
+      notify: Aplicar cambios
+
+    - name: ¿Existe ya la imagen de esta versión?
+      ansible.builtin.command: docker image inspect biblioteca:{{ app_version }}
+      register: imagen
+      changed_when: false
+      failed_when: false
+      check_mode: false          # solo consulta: también corre con --check
+
+    - name: Construir la imagen de la versión
+      ansible.builtin.command: >
+        docker build -t biblioteca:{{ app_version }} --build-arg APP_VERSION={{ app_version }}
+        {{ destino }}/fuente/{{ fuente_subdir }}
+      when: imagen.rc != 0
+
+    - name: Servicios arriba y sanos
+      ansible.builtin.command: docker compose up -d --wait
+      args:
+        chdir: "{{ destino }}"
+      register: arranque
+      changed_when: "'Started' in arranque.stderr or 'Recreated' in arranque.stderr"
+
+  handlers:
+    - name: Aplicar cambios
+      ansible.builtin.command: docker compose up -d --wait --force-recreate
+      args:
+        chdir: "{{ destino }}"
+
+  post_tasks:
+    # --- Verificación (sección 5.7): no cambia nada, solo comprueba ---
+    - name: Prueba de humo a través del proxy
+      ansible.builtin.command: bash smoke-test.sh https://{{ dominio }}
+      args:
+        chdir: "{{ destino }}"
+      environment:
+        CURL_OPTS: "-k --resolve {{ dominio }}:443:127.0.0.1"
+      register: humo
+      changed_when: false
+      check_mode: false
+
+    - name: Resultado de la prueba de humo
+      ansible.builtin.debug:
+        msg: "{{ humo.stdout_lines[-1] }}"

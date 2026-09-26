@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 330" width="800" height="330" font-family="Inter,Roboto,'Open Sans',system-ui,sans-serif">
+  <rect width="800" height="330" fill="#0d1117"/>
+  <text x="400" y="32" font-size="17" font-weight="700" fill="#e6edf3" text-anchor="middle">Capas de la infraestructura como código</text>
+
+  <g font-size="12.5">
+    <rect x="40" y="54" width="720" height="46" rx="6" fill="#161b22" stroke="#a371f7"/>
+    <text x="60" y="82" font-weight="700" fill="#a371f7">Aprovisionar</text>
+    <text x="220" y="82" fill="#e6edf3">máquinas, redes, volúmenes, bases</text>
+    <text x="740" y="82" fill="#8b949e" text-anchor="end">OpenTofu · plan / apply</text>
+
+    <rect x="40" y="108" width="720" height="46" rx="6" fill="#161b22" stroke="#d29922"/>
+    <text x="60" y="136" font-weight="700" fill="#d29922">Primer arranque</text>
+    <text x="220" y="136" fill="#e6edf3">usuario, llave, SSH seguro, Python</text>
+    <text x="740" y="136" fill="#8b949e" text-anchor="end">cloud-init · una vez</text>
+
+    <rect x="40" y="162" width="720" height="46" rx="6" fill="#161b22" stroke="#58a6ff"/>
+    <text x="60" y="190" font-weight="700" fill="#58a6ff">Configurar</text>
+    <text x="220" y="190" fill="#e6edf3">paquetes, Docker, firewall, carpetas, .env, servicios</text>
+    <text x="740" y="190" fill="#8b949e" text-anchor="end">Ansible · idempotente</text>
+
+    <rect x="40" y="216" width="720" height="46" rx="6" fill="#161b22" stroke="#3fb950"/>
+    <text x="60" y="244" font-weight="700" fill="#3fb950">Desplegar</text>
+    <text x="220" y="244" fill="#e6edf3">versión de la app, migraciones, verificación</text>
+    <text x="740" y="244" fill="#8b949e" text-anchor="end">pipeline · desplegar.sh (sem 7)</text>
+
+    <rect x="40" y="270" width="720" height="46" rx="6" fill="#12301c" stroke="#3fb950"/>
+    <text x="60" y="298" font-weight="700" fill="#3fb950">Datos</text>
+    <text x="220" y="298" fill="#e6edf3">no se recrean: se respaldan y se restauran</text>
+    <text x="740" y="298" fill="#8b949e" text-anchor="end">restic · prevent_destroy (sem 6)</text>
+  </g>
+</svg>

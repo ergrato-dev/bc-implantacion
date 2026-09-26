@@ -1,0 +1,30 @@
+# Laboratorio de la semana 10: un Ubuntu "recién creado" y un nodo de control de Ansible.
+# Uso: docker compose up -d --build   (luego, práctica 02)
+name: lab-s10
+
+services:
+  servidor:
+    build: ./servidor
+    image: servidor:lab-s10
+    hostname: servidor
+    privileged: true
+    cgroup: host
+    tmpfs:
+      - /run
+      - /run/lock
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:rw
+      - docker-servidor:/var/lib/docker          # Docker dentro de Docker necesita sus datos
+      - containerd-servidor:/var/lib/containerd  # fuera del sistema de archivos del contenedor
+    ports:
+      - "127.0.0.1:8443:443"
+
+  control:
+    build: ./control
+    image: control:lab-s10
+    volumes:
+      - ./ansible:/trabajo
+
+volumes:
+  docker-servidor:
+  containerd-servidor:

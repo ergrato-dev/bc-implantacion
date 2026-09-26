@@ -1,0 +1,5 @@
+# Llaves SSH del laboratorio, contraseña y archivo de Ansible Vault: se generan en la práctica.
+# (En un proyecto real, vault.yml cifrado SÍ se versiona; la contraseña del vault nunca.)
+llaves/
+.vault-pass
+group_vars/biblioteca/vault.yml

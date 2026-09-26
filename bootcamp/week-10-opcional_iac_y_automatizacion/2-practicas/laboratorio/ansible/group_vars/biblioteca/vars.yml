@@ -1,0 +1,16 @@
+# Variables del grupo "biblioteca": todo lo que cambia entre una instalación y otra.
+# Los secretos NO van aquí: van en vault.yml, cifrado con ansible-vault.
+
+# De dónde sale el código (la etiqueta de la versión, en un proyecto real)
+fuente_repo: https://github.com/ergrato-dev/bc-implantacion.git
+fuente_version: main
+fuente_subdir: referencia
+
+destino: /opt/biblioteca
+app_version: "1.0.0"
+dominio: biblioteca.lab.test
+tls_interno: true            # dominio .test: certificado de la CA interna de Caddy
+
+postgres_user: biblioteca
+postgres_db: biblioteca
+postgres_password: "{{ vault_postgres_password }}"

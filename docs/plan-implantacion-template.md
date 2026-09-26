@@ -38,7 +38,8 @@ método de transferencia de archivos. -->
 ## 5. Plan de instalación y despliegue — Semanas 2 y 4 (CE-1, CE-5)
 
 <!-- 📝 Prerrequisitos, pasos numerados y verificables para instalar en servidor local y en la
-nube, versión liberada, costos estimados. -->
+nube, versión liberada, costos estimados. Semana 10 (opcional): subsección 5.10 con la
+instalación automatizada (cloud-init + Ansible). -->
 
 ## 6. Configuración y verificación — Semana 5 (CE-1)
 
