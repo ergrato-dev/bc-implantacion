@@ -28,10 +28,13 @@ def aplicar_migraciones():
     with conectar() as conn:
         # Candado: si arrancan dos instancias a la vez, solo una aplica migraciones.
         conn.execute("SELECT pg_advisory_lock(20260925)")
-        conn.execute(
-            "CREATE TABLE IF NOT EXISTS schema_migrations ("
-            " version TEXT PRIMARY KEY, aplicada_en TIMESTAMPTZ NOT NULL DEFAULT now())"
-        )
+        # Se consulta antes de crear: así un rol sin permiso CREATE (semana 6) puede arrancar
+        # la app cuando las migraciones ya las aplicó el rol dueño.
+        if conn.execute("SELECT to_regclass('schema_migrations')").fetchone()[0] is None:
+            conn.execute(
+                "CREATE TABLE schema_migrations ("
+                " version TEXT PRIMARY KEY, aplicada_en TIMESTAMPTZ NOT NULL DEFAULT now())"
+            )
         aplicadas = {fila[0] for fila in conn.execute("SELECT version FROM schema_migrations")}
         for archivo in sorted(MIGRATIONS_DIR.glob("*.sql")):
             if archivo.stem in aplicadas:
@@ -102,3 +105,9 @@ def crear_libro(libro: LibroNuevo):
 # un solo servicio que desplegar. Se monta al final para no tapar las rutas /api.
 if STATIC_DIR.is_dir():
     app.mount("/", StaticFiles(directory=STATIC_DIR, html=True), name="frontend")
+
+
+# Migraciones como paso aparte, con el rol dueño de las tablas:
+#   docker compose run --rm -e DATABASE_URL=<url del dueño> app python -m app.main
+if __name__ == "__main__":
+    aplicar_migraciones()

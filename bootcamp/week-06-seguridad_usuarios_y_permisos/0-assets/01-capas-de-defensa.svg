@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="800" height="400" font-family="Inter,Roboto,'Open Sans',system-ui,sans-serif">
+  <rect width="800" height="400" fill="#0d1117"/>
+  <text x="400" y="32" font-size="17" font-weight="700" fill="#e6edf3" text-anchor="middle">Capas de defensa del servidor</text>
+  <text x="400" y="52" font-size="11.5" fill="#8b949e" text-anchor="middle">cada capa limita el daño si la anterior falla</text>
+
+  <g font-size="12.5">
+    <rect x="60" y="72" width="680" height="300" rx="10" fill="#161b22" stroke="#f85149"/>
+    <text x="80" y="94" font-weight="700" fill="#f85149">1 · Firewall (UFW)</text>
+    <text x="720" y="94" fill="#8b949e" text-anchor="end">solo 22, 80 y 443 entran</text>
+
+    <rect x="95" y="108" width="610" height="250" rx="10" fill="#0d1117" stroke="#d29922"/>
+    <text x="115" y="130" font-weight="700" fill="#d29922">2 · SSH con llave</text>
+    <text x="685" y="130" fill="#8b949e" text-anchor="end">sin contraseñas, sin root, AllowGroups</text>
+
+    <rect x="130" y="144" width="540" height="200" rx="10" fill="#161b22" stroke="#58a6ff"/>
+    <text x="150" y="166" font-weight="700" fill="#58a6ff">3 · Usuarios, grupos y sudo</text>
+    <text x="650" y="166" fill="#8b949e" text-anchor="end">una cuenta por persona, sudo limitado</text>
+
+    <rect x="165" y="180" width="470" height="150" rx="10" fill="#0d1117" stroke="#a371f7"/>
+    <text x="185" y="202" font-weight="700" fill="#a371f7">4 · Red interna de Docker</text>
+    <text x="615" y="202" fill="#8b949e" text-anchor="end">solo el proxy publica puertos</text>
+
+    <rect x="200" y="216" width="400" height="100" rx="10" fill="#161b22" stroke="#3fb950"/>
+    <text x="220" y="238" font-weight="700" fill="#3fb950">5 · Roles de la base</text>
+    <text x="580" y="238" fill="#8b949e" text-anchor="end">la app no puede DROP ni ALTER</text>
+
+    <rect x="235" y="252" width="330" height="50" rx="8" fill="#12301c" stroke="#3fb950"/>
+    <text x="400" y="274" font-weight="700" fill="#e6edf3" text-anchor="middle">Datos</text>
+    <text x="400" y="291" font-size="11" fill="#8b949e" text-anchor="middle">+ respaldo cifrado fuera del sitio</text>
+  </g>
+</svg>

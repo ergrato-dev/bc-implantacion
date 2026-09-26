@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 380" width="800" height="380" font-family="Inter,Roboto,'Open Sans',system-ui,sans-serif">
+  <rect width="800" height="380" fill="#0d1117"/>
+  <text x="400" y="32" font-size="17" font-weight="700" fill="#e6edf3" text-anchor="middle">Roles de mínimo privilegio en PostgreSQL</text>
+
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#8b949e"/>
+    </marker>
+  </defs>
+
+  <!-- superusuario -->
+  <rect x="270" y="52" width="260" height="58" rx="8" fill="#3a1414" stroke="#f85149"/>
+  <text x="400" y="76" font-size="13.5" font-weight="700" fill="#f85149" text-anchor="middle">postgres (superusuario)</text>
+  <text x="400" y="96" font-size="11" fill="#8b949e" text-anchor="middle">solo el administrador: crea roles y bases</text>
+
+  <g stroke="#8b949e" stroke-width="1.5" fill="none">
+    <line x1="400" y1="110" x2="400" y2="132"/>
+    <line x1="115" y1="132" x2="685" y2="132"/>
+    <line x1="115" y1="132" x2="115" y2="152" marker-end="url(#a)"/>
+    <line x1="305" y1="132" x2="305" y2="152" marker-end="url(#a)"/>
+    <line x1="495" y1="132" x2="495" y2="152" marker-end="url(#a)"/>
+    <line x1="685" y1="132" x2="685" y2="152" marker-end="url(#a)"/>
+  </g>
+  <text x="560" y="126" font-size="10.5" fill="#8b949e">crea</text>
+
+  <g font-size="11.5">
+    <rect x="30" y="155" width="170" height="150" rx="8" fill="#161b22" stroke="#d29922"/>
+    <text x="115" y="178" font-size="12.5" font-weight="700" fill="#d29922" text-anchor="middle">biblioteca_owner</text>
+    <text x="45" y="202" fill="#3fb950">✔ CREATE, ALTER, DROP</text>
+    <text x="45" y="220" fill="#3fb950">✔ dueño de las tablas</text>
+    <text x="45" y="238" fill="#f85149">✘ crear roles o bases</text>
+    <text x="115" y="290" fill="#8b949e" text-anchor="middle">lo usan: migraciones</text>
+
+    <rect x="220" y="155" width="170" height="150" rx="8" fill="#161b22" stroke="#58a6ff"/>
+    <text x="305" y="178" font-size="12.5" font-weight="700" fill="#58a6ff" text-anchor="middle">biblioteca_app</text>
+    <text x="235" y="202" fill="#3fb950">✔ SELECT, INSERT</text>
+    <text x="235" y="220" fill="#3fb950">✔ UPDATE, DELETE</text>
+    <text x="235" y="238" fill="#f85149">✘ CREATE, DROP, ALTER</text>
+    <text x="235" y="256" fill="#f85149">✘ TRUNCATE</text>
+    <text x="305" y="290" fill="#8b949e" text-anchor="middle">lo usa: la app</text>
+
+    <rect x="410" y="155" width="170" height="150" rx="8" fill="#161b22" stroke="#a371f7"/>
+    <text x="495" y="178" font-size="12.5" font-weight="700" fill="#a371f7" text-anchor="middle">biblioteca_respaldo</text>
+    <text x="425" y="202" fill="#3fb950">✔ leer todo</text>
+    <text x="425" y="220" fill="#8b949e">  (pg_read_all_data)</text>
+    <text x="425" y="238" fill="#f85149">✘ escribir</text>
+    <text x="495" y="290" fill="#8b949e" text-anchor="middle">lo usa: pg_dump (cron)</text>
+
+    <rect x="600" y="155" width="170" height="150" rx="8" fill="#161b22" stroke="#3fb950"/>
+    <text x="685" y="178" font-size="12.5" font-weight="700" fill="#3fb950" text-anchor="middle">biblioteca_lectura</text>
+    <text x="615" y="202" fill="#3fb950">✔ SELECT</text>
+    <text x="615" y="220" fill="#f85149">✘ escribir</text>
+    <text x="615" y="238" fill="#f85149">✘ DDL</text>
+    <text x="685" y="290" fill="#8b949e" text-anchor="middle">lo usan: reportes</text>
+  </g>
+
+  <rect x="120" y="325" width="560" height="40" rx="6" fill="#161b22" stroke="#d29922"/>
+  <text x="400" y="350" font-size="12" fill="#e6edf3" text-anchor="middle">Los roles son del servidor: pg_dump no los respalda. El script de roles se versiona.</text>
+</svg>

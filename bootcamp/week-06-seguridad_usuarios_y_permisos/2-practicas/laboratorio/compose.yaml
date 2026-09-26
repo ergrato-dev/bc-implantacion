@@ -1,0 +1,55 @@
+# Laboratorio de la semana 6: endurecer el servidor de la app de referencia.
+# Uso: cp .env.example .env && docker compose up -d --build --wait
+name: lab-s06
+
+services:
+  # Simula la VM Ubuntu del laboratorio: usuarios, SSH, sudo, UFW, cron y restic.
+  servidor:
+    build: ./servidor
+    image: servidor:lab-s06
+    hostname: servidor
+    cap_add:
+      - NET_ADMIN           # para que UFW pueda escribir reglas de firewall
+    ports:
+      - "127.0.0.1:2226:22"
+    volumes:
+      - ./sql:/sql:ro
+      - ./respaldo:/opt/respaldo-lab:ro
+
+  db:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Define POSTGRES_PASSWORD en .env}
+      POSTGRES_DB: biblioteca
+    volumes:
+      - datos:/var/lib/postgresql/data
+      - ./sql:/sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d biblioteca"]
+      interval: 5s
+      retries: 10
+
+  app:
+    build: ../../../../referencia
+    image: biblioteca:lab-s06
+    environment:
+      DATABASE_URL: ${DATABASE_URL:?Define DATABASE_URL en .env}
+    ports:
+      - "127.0.0.1:8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+
+  # Copia "fuera del sitio": servidor REST de restic en modo solo-agregar.
+  externo:
+    image: restic/rest-server:latest
+    environment:
+      OPTIONS: "--append-only"
+      DISABLE_AUTHENTICATION: "1"     # solo laboratorio
+    volumes:
+      - externo:/data
+
+volumes:
+  datos:
+  externo:

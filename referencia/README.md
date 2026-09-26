@@ -60,6 +60,16 @@ bash scripts/smoke-test.sh
 
 Abrir <http://localhost:8000>.
 
+## Migraciones
+
+Al arrancar, la app aplica las migraciones pendientes de `api/migrations/`. Si se conecta con un
+rol sin permiso para crear tablas (semana 6), las migraciones se aplican antes, como paso aparte,
+con el rol dueño:
+
+```bash
+docker compose run --rm -e DATABASE_URL=<url del rol dueño> app python -m app.main
+```
+
 ## Requisitos mínimos
 
 | Recurso | Mínimo |
