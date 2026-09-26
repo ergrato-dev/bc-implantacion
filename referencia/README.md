@@ -26,6 +26,8 @@ referencia/
 ├── web/                      ← React: src/App.jsx, package.json, package-lock.json
 ├── .github/workflows/        ← ci.yml (prueba en cada push) y release.yml (GHCR + Render)
 ├── scripts/smoke-test.sh     ← prueba de humo contra cualquier URL
+├── scripts/huella.sql        ← huella de la base (filas y checksum por tabla)
+├── docs/plan-implantacion.md ← Plan de Implantación consolidado (modelo de la semana 9)
 └── deploy/
     ├── compose.prod.yaml     ← servidor Linux: proxy Caddy + app (imagen liberada) + db
     ├── desplegar.sh          ← actualizar a una versión del registro, con rollback automático

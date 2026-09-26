@@ -40,7 +40,7 @@ esa tabla; verifícalo con el agente `rap-trazabilidad-reviewer`.
 
 ## Estado
 
-Semanas 1-8 completas. Semanas 9-10: READMEs y rúbricas con `🚧`, subcarpetas vacías con `.gitkeep`.
+Semanas 1-9 completas. Semana 10 (opcional): README y rúbrica con `🚧`, subcarpetas vacías con `.gitkeep`.
 
 `referencia/` es la app de referencia (FastAPI + React + PostgreSQL en una sola imagen). Las
 prácticas desde la semana 4 dependen de ella: si cambias endpoints, migraciones o

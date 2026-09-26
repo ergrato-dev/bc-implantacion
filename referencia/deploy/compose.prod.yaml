@@ -16,8 +16,8 @@ services:
     restart: unless-stopped
     logging: *logging
     ports:
-      - "80:80"
-      - "443:443"
+      - "${PUERTO_HTTP:-80}:80"
+      - "${PUERTO_HTTPS:-443}:443"
     environment:
       DOMINIO: ${DOMINIO}
     volumes:

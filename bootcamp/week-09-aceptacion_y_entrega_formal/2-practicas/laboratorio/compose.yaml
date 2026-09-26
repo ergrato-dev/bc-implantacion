@@ -1,0 +1,34 @@
+# Laboratorio de la semana 9: la "producción" del equipo que entrega la app de referencia.
+# Uso: cp .env.example .env && docker compose up -d --build --wait
+name: lab-s09
+
+services:
+  db:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: biblioteca
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Define POSTGRES_PASSWORD en .env}
+      POSTGRES_DB: biblioteca
+    volumes:
+      - datos:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U biblioteca -d biblioteca"]
+      interval: 5s
+      retries: 10
+
+  app:
+    build:
+      context: ../../../../referencia
+      args:
+        APP_VERSION: 1.0.0
+    image: biblioteca:1.0.0
+    environment:
+      DATABASE_URL: postgresql://biblioteca:${POSTGRES_PASSWORD}@db:5432/biblioteca
+    ports:
+      - "127.0.0.1:8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  datos:

@@ -3,7 +3,8 @@
 <!-- 📝 Instrucción: cada equipo copia esta plantilla al repositorio de su proyecto real
 (`docs/plan-implantacion.md`) y completa una sección por semana. En la semana 9 el documento
 debe permitir que otro equipo instale el proyecto desde cero sin ayuda. Solo datos sintéticos:
-nada de IPs, usuarios ni contraseñas reales. -->
+nada de IPs, usuarios ni contraseñas reales. Modelo completo: el plan de la app de referencia,
+referencia/docs/plan-implantacion.md. -->
 
 | Campo | Valor |
 |---|---|
