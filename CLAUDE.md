@@ -31,6 +31,8 @@ esa tabla; verifícalo con el agente `rap-trazabilidad-reviewer`.
 ## Reglas que rompen fácil
 
 - **Laboratorios**: cada `compose.yaml` de laboratorio lleva `name: lab-sNN` para que las semanas no compartan proyecto de Compose (todas las carpetas se llaman `laboratorio`).
+- **Imágenes nuevas**: si un laboratorio o una práctica usa una imagen de Docker nueva, agrégala a
+  `scripts/precargar-imagenes.sh`.
 - **Scope de commit**: `feat(week-NN)` / `fix(week-NN)`, nunca el slug completo.
 - **Datos reales**: nunca IPs, hosts, usuarios o credenciales del laboratorio institucional, ni
   datos de aprendices/instructores. Al servidor del laboratorio se le llama "VM Ubuntu del

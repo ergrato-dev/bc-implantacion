@@ -29,6 +29,8 @@
 Herramientas que **no** hace falta instalar porque corren en contenedores: restic, Ansible,
 OpenTofu, Trivy, `pip-audit`, Uptime Kuma.
 
+Si el instructor reparte el archivo de imágenes precargadas: `docker load -i imagenes.tar`.
+
 ## Servidor
 
 Una de estas dos opciones, según disponibilidad del ambiente de formación:

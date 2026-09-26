@@ -84,7 +84,9 @@ week-XX-tema/
 
 ## 🛠️ Preparación
 
-Ver [`docs/setup-entorno.md`](docs/setup-entorno.md).
+Ver [`docs/setup-entorno.md`](docs/setup-entorno.md). Instructores: antes de cada curso, revisar
+[`docs/checklist-instructor.md`](docs/checklist-instructor.md) y precargar las imágenes de Docker
+con `bash scripts/precargar-imagenes.sh`.
 
 ---
 
