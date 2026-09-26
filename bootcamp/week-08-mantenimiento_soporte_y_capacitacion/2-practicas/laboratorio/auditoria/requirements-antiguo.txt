@@ -1,0 +1,6 @@
+# Dependencias de un proyecto "heredado" (datos sintéticos): versiones de 2021 sin actualizar.
+# Práctica 01: auditarlas con pip-audit y decidir qué hacer con cada hallazgo.
+fastapi==0.65.1
+jinja2==2.11.2
+urllib3==1.26.4
+requests==2.25.1

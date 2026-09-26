@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 330" width="800" height="330" font-family="Inter,Roboto,'Open Sans',system-ui,sans-serif">
+  <rect width="800" height="330" fill="#0d1117"/>
+  <text x="400" y="32" font-size="17" font-weight="700" fill="#e6edf3" text-anchor="middle">Tipos de mantenimiento</text>
+
+  <text x="215" y="62" font-size="12" fill="#8b949e" text-anchor="middle">Reacciona a un problema</text>
+  <text x="585" y="62" font-size="12" fill="#8b949e" text-anchor="middle">Se anticipa</text>
+
+  <g font-size="12">
+    <rect x="40" y="74" width="350" height="110" rx="8" fill="#3a1414" stroke="#f85149"/>
+    <text x="60" y="100" font-size="14" font-weight="700" fill="#f85149">Correctivo</text>
+    <text x="60" y="122" fill="#e6edf3">Corregir un defecto</text>
+    <text x="60" y="146" fill="#8b949e">ISBN duplicado devuelve 500 en lugar de 409</text>
+    <text x="60" y="166" fill="#8b949e">→ versión de parche</text>
+
+    <rect x="410" y="74" width="350" height="110" rx="8" fill="#12301c" stroke="#3fb950"/>
+    <text x="430" y="100" font-size="14" font-weight="700" fill="#3fb950">Preventivo</text>
+    <text x="430" y="122" fill="#e6edf3">Evitar un problema futuro</text>
+    <text x="430" y="146" fill="#8b949e">parches, dependencias, limpieza de disco,</text>
+    <text x="430" y="166" fill="#8b949e">restauración de prueba</text>
+
+    <rect x="40" y="200" width="350" height="110" rx="8" fill="#161b22" stroke="#d29922"/>
+    <text x="60" y="226" font-size="14" font-weight="700" fill="#d29922">Adaptativo</text>
+    <text x="60" y="248" fill="#e6edf3">Adaptarse a un cambio del entorno</text>
+    <text x="60" y="272" fill="#8b949e">fin de soporte de PostgreSQL 17, cambio de</text>
+    <text x="60" y="292" fill="#8b949e">plan del proveedor, una norma nueva</text>
+
+    <rect x="410" y="200" width="350" height="110" rx="8" fill="#161b22" stroke="#58a6ff"/>
+    <text x="430" y="226" font-size="14" font-weight="700" fill="#58a6ff">Perfectivo</text>
+    <text x="430" y="248" fill="#e6edf3">Mejorar lo que ya funciona</text>
+    <text x="430" y="272" fill="#8b949e">índice por título, mensajes de error más</text>
+    <text x="430" y="292" fill="#8b949e">claros, mejor rendimiento</text>
+  </g>
+</svg>

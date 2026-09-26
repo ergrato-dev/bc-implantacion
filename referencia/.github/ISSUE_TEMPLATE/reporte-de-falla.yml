@@ -1,0 +1,57 @@
+# Formulario para reportar una falla. Guía a quien reporta para que el soporte tenga
+# desde el primer mensaje lo necesario para reproducir y priorizar.
+name: Reporte de falla
+description: Algo no funciona como debería
+title: "[Falla] "
+labels: ["falla", "por-clasificar"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Gracias por reportar. **No incluyas contraseñas, datos personales ni capturas con
+        información de usuarios.**
+  - type: input
+    id: version
+    attributes:
+      label: Versión
+      description: La que muestra /api/version o el pie de la aplicación
+      placeholder: "1.3.0"
+    validations:
+      required: true
+  - type: textarea
+    id: pasos
+    attributes:
+      label: Pasos para reproducir
+      placeholder: |
+        1. Ir a ...
+        2. Hacer clic en ...
+        3. Ver el error
+    validations:
+      required: true
+  - type: textarea
+    id: esperado
+    attributes:
+      label: Qué esperabas y qué pasó
+    validations:
+      required: true
+  - type: dropdown
+    id: impacto
+    attributes:
+      label: Impacto
+      options:
+        - Nadie puede usar la aplicación
+        - Una función importante no sirve y no hay alternativa
+        - Una función falla pero hay una forma de sortearlo
+        - Molestia menor o error visual
+    validations:
+      required: true
+  - type: dropdown
+    id: urgencia
+    attributes:
+      label: Urgencia
+      options:
+        - Bloquea el trabajo de hoy
+        - Afecta el trabajo de esta semana
+        - Puede esperar
+    validations:
+      required: true

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 340" width="800" height="340" font-family="Inter,Roboto,'Open Sans',system-ui,sans-serif">
+  <rect width="800" height="340" fill="#0d1117"/>
+  <text x="400" y="32" font-size="17" font-weight="700" fill="#e6edf3" text-anchor="middle">Niveles de soporte</text>
+
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#8b949e"/>
+    </marker>
+  </defs>
+
+  <g font-size="12">
+    <polygon points="330,60 470,60 430,120 370,120" fill="#161b22" stroke="#f85149"/>
+    <text x="400" y="88" font-weight="700" fill="#f85149" text-anchor="middle">N3</text>
+    <text x="400" y="106" font-size="10.5" fill="#8b949e" text-anchor="middle">desarrollo</text>
+
+    <polygon points="290,126 510,126 470,186 330,186" fill="#161b22" stroke="#d29922"/>
+    <text x="400" y="154" font-weight="700" fill="#d29922" text-anchor="middle">N2</text>
+    <text x="400" y="172" font-size="10.5" fill="#8b949e" text-anchor="middle">soporte técnico</text>
+
+    <polygon points="250,192 550,192 510,252 290,252" fill="#161b22" stroke="#58a6ff"/>
+    <text x="400" y="220" font-weight="700" fill="#58a6ff" text-anchor="middle">N1</text>
+    <text x="400" y="238" font-size="10.5" fill="#8b949e" text-anchor="middle">mesa de ayuda</text>
+
+    <polygon points="210,258 590,258 550,318 250,318" fill="#12301c" stroke="#3fb950"/>
+    <text x="400" y="286" font-weight="700" fill="#3fb950" text-anchor="middle">N0</text>
+    <text x="400" y="304" font-size="10.5" fill="#8b949e" text-anchor="middle">autoservicio: guía rápida, FAQ</text>
+  </g>
+
+  <g font-size="11" fill="#e6edf3">
+    <text x="490" y="94">corrige el código → versión nueva</text>
+    <text x="530" y="160">servidor, base, logs, rollback</text>
+    <text x="570" y="226">registra, clasifica, soluciones conocidas</text>
+  </g>
+
+  <g stroke="#8b949e" stroke-width="1.5" fill="none">
+    <path d="M200,300 L150,300 L150,90 L320,90" marker-end="url(#a)"/>
+  </g>
+  <text x="140" y="190" font-size="11" fill="#8b949e" text-anchor="end">escala</text>
+  <text x="140" y="206" font-size="11" fill="#8b949e" text-anchor="end">con datos</text>
+  <text x="140" y="222" font-size="11" fill="#8b949e" text-anchor="end">completos</text>
+  <text x="40" y="326" font-size="11" fill="#8b949e">más volumen abajo, más especialidad arriba</text>
+</svg>

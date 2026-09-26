@@ -1,0 +1,39 @@
+# Dependabot: revisa cada semana si hay versiones nuevas y abre un pull request por grupo.
+# Cada pull request pasa por ci.yml (semana 7) antes de poder fusionarse.
+# Las actualizaciones de seguridad llegan aparte, apenas se publica la alerta, si están
+# activadas en Settings > Code security.
+version: 2
+updates:
+  # Dependencias de la API (requirements.txt generado con pip-compile desde requirements.in)
+  - package-ecosystem: pip
+    directory: /api
+    schedule:
+      interval: weekly
+    groups:
+      python-menores:
+        update-types: [minor, patch]
+
+  # Dependencias del frontend (package.json + package-lock.json)
+  - package-ecosystem: npm
+    directory: /web
+    schedule:
+      interval: weekly
+    groups:
+      npm-menores:
+        update-types: [minor, patch]
+
+  # Imágenes base del Dockerfile (node, python)
+  - package-ecosystem: docker
+    directory: /
+    schedule:
+      interval: weekly
+    ignore:
+      # Node solo construye el frontend: se sube de versión mayor a mano, a una LTS.
+      - dependency-name: node
+        update-types: ["version-update:semver-major"]
+
+  # Versiones de las acciones de los workflows (actions/checkout...)
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly

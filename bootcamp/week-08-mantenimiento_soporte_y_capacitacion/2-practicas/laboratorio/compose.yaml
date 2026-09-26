@@ -1,0 +1,10 @@
+# Laboratorio de la semana 8: actualizaciones y rutinas de mantenimiento de un servidor Ubuntu.
+# Uso: docker compose up -d --build --wait
+name: lab-s08
+
+services:
+  # Simula la VM Ubuntu del laboratorio, con paquetes sin actualizar.
+  servidor:
+    build: ./servidor
+    image: servidor:lab-s08
+    hostname: servidor
