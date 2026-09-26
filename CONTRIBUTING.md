@@ -168,7 +168,6 @@ Antes de abrir un PR verifica:
 
 ## ❓ Preguntas
 
-- 💬 [GitHub Discussions](https://github.com/ergrato-dev/bc-implantacion/discussions)
 - 🐛 [GitHub Issues](https://github.com/ergrato-dev/bc-implantacion/issues)
 
 ---

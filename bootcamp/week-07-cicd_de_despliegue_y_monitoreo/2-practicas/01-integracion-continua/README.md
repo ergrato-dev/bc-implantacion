@@ -20,7 +20,8 @@ Trae los workflows de la app de referencia a tu repositorio:
 ```bash
 cd ~/biblioteca
 git pull
-cp -r ~/bc-implantacion/referencia/.github .      # ajusta la ruta a tu copia del bootcamp
+mkdir -p .github
+cp -r ~/bc-implantacion/referencia/.github/workflows .github/   # ajusta la ruta a tu copia del bootcamp
 ls .github/workflows
 ```
 

@@ -19,7 +19,7 @@
 
 - [OpenSSH — manual de `sftp`](https://man.openbsd.org/sftp)
 - [OpenSSH — manual de `scp`](https://man.openbsd.org/scp)
-- [`rsync` — manual (Ubuntu)](https://manpages.ubuntu.com/manpages/noble/man1/rsync.1.html)
+- [`rsync` — manual](https://download.samba.org/pub/rsync/rsync.1)
 - [Imagen `atmoz/sftp`](https://github.com/atmoz/sftp)
 
 ## Hosting

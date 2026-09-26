@@ -29,7 +29,8 @@ Un secreto es cualquier dato que da acceso. En la app de referencia hay más de 
 2. **Uno por propósito**: cada rol, servicio y ambiente con su propio secreto. Compartirlos
    impide saber qué se filtró y obliga a cambiar todo a la vez.
 3. **Permisos de archivo mínimos**: `600` o `640`, dueño correcto.
-4. **Generados, no inventados**: `openssl rand -base64 32`.
+4. **Generados, no inventados**: `openssl rand -base64 32`; si el secreto va dentro de una URL
+   (como `DATABASE_URL`), `openssl rand -hex 24`, porque `/` y `+` rompen la URL.
 5. **Fuera de los logs**: no se imprimen, no se pegan en chats ni en issues (semana 5).
 6. **Con copia fuera del servidor** los que no se pueden reconstruir: sin la contraseña de
    restic, los respaldos son ruido cifrado.

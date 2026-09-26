@@ -34,5 +34,5 @@
 - [restic — Respaldar (incluye `--stdin`)](https://restic.readthedocs.io/en/stable/040_backup.html)
 - [restic — Retención con `forget`](https://restic.readthedocs.io/en/stable/060_forget.html)
 - [rest-server de restic (modo `--append-only`)](https://github.com/restic/rest-server)
-- [`crontab(5)` — Ubuntu](https://manpages.ubuntu.com/manpages/noble/man5/crontab.5.html)
+- [`crontab(5)` — manual](https://man7.org/linux/man-pages/man5/crontab.5.html)
 - [crontab.guru — leer expresiones de cron](https://crontab.guru/)

@@ -45,11 +45,11 @@ En la opción A estos archivos llegan por SFTP (semana 3). Edita `$DESTINO/.env`
 
 - `DOMINIO=biblioteca.lab.test`
 - `APP_VERSION=1.0.0`
-- `POSTGRES_PASSWORD` → genera una con `openssl rand -base64 24`
+- `POSTGRES_PASSWORD` → genera una con `openssl rand -hex 24` (hexadecimal: sin `/` ni `+`, que
+  romperían la cadena de conexión que arma `compose.yaml`)
+- **Solo opción B**: `PUERTO_HTTP=8080` y `PUERTO_HTTPS=8443`
 
 Como `.test` no es un dominio público, en `Caddyfile` descomenta `tls internal`.
-
-**Solo opción B**: en `compose.yaml` cambia los puertos a `"8080:80"` y `"8443:443"`.
 
 ## 3. Llevar la imagen sin registro
 

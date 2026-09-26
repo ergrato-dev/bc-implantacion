@@ -158,7 +158,7 @@ Definir en la terminal (ajustar las rutas):
 
 ```bash
 DESTINO=/opt/biblioteca          # carpeta de la instalación; en un equipo de prueba: ~/simulacro/biblioteca
-FUENTE=~/biblioteca              # carpeta del código (la que contiene el Dockerfile)
+FUENTE=~/bc-implantacion/referencia   # carpeta del código en la etiqueta a instalar (la que contiene el Dockerfile)
 ```
 
 ### 5.3 Carpeta de la instalación

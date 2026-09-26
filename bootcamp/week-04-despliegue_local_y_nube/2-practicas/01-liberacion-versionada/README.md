@@ -19,7 +19,7 @@ Copia la app de referencia a un repositorio propio:
 ```bash
 cp -r bc-implantacion/referencia ~/biblioteca
 cd ~/biblioteca
-rm -rf web/node_modules .env
+rm -rf web/node_modules .env .github     # los workflows y Dependabot se agregan en las semanas 7 y 8
 git init -b main && git add . && git commit -m "chore: import reference app"
 ```
 
