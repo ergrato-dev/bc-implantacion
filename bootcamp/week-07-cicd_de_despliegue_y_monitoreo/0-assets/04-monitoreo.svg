@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 320" width="800" height="320" font-family="Inter,Roboto,'Open Sans',system-ui,sans-serif">
+  <rect width="800" height="320" fill="#0d1117"/>
+  <text x="400" y="32" font-size="17" font-weight="700" fill="#e6edf3" text-anchor="middle">Monitoreo con Uptime Kuma</text>
+
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#8b949e"/>
+    </marker>
+  </defs>
+
+  <g font-size="12" text-anchor="middle">
+    <rect x="300" y="120" width="200" height="70" rx="8" fill="#161b22" stroke="#a371f7"/>
+    <text x="400" y="148" font-weight="700" fill="#a371f7">Uptime Kuma</text>
+    <text x="400" y="168" font-size="10.5" fill="#8b949e">fuera del servidor vigilado</text>
+
+    <rect x="30" y="60" width="210" height="46" rx="6" fill="#161b22" stroke="#3fb950"/>
+    <text x="135" y="80" fill="#e6edf3">HTTP · /api/health</text><text x="135" y="96" font-size="10" fill="#8b949e">¿responde 2xx? (app + base)</text>
+    <rect x="30" y="130" width="210" height="46" rx="6" fill="#161b22" stroke="#3fb950"/>
+    <text x="135" y="150" fill="#e6edf3">Palabra clave · /api/version</text><text x="135" y="166" font-size="10" fill="#8b949e">¿es la versión esperada?</text>
+    <rect x="30" y="200" width="210" height="46" rx="6" fill="#161b22" stroke="#3fb950"/>
+    <text x="135" y="220" fill="#e6edf3">Certificado HTTPS</text><text x="135" y="236" font-size="10" fill="#8b949e">¿vence pronto?</text>
+
+    <rect x="300" y="240" width="200" height="56" rx="6" fill="#161b22" stroke="#d29922"/>
+    <text x="400" y="262" fill="#e6edf3">respaldar.sh (cron)</text><text x="400" y="280" font-size="10" fill="#8b949e">latido solo si todo salió bien</text>
+
+    <rect x="570" y="80" width="200" height="56" rx="6" fill="#3a1414" stroke="#f85149"/>
+    <text x="670" y="102" fill="#f85149">Alerta: caído</text><text x="670" y="120" font-size="10" fill="#8b949e">webhook, Telegram, correo…</text>
+    <rect x="570" y="170" width="200" height="56" rx="6" fill="#12301c" stroke="#3fb950"/>
+    <text x="670" y="192" fill="#3fb950">Alerta: recuperado</text><text x="670" y="210" font-size="10" fill="#8b949e">mismo canal</text>
+  </g>
+
+  <g stroke="#8b949e" stroke-width="1.5" fill="none">
+    <line x1="298" y1="140" x2="242" y2="85" marker-end="url(#a)"/>
+    <line x1="298" y1="155" x2="242" y2="155" marker-end="url(#a)"/>
+    <line x1="298" y1="170" x2="242" y2="222" marker-end="url(#a)"/>
+    <line x1="400" y1="238" x2="400" y2="192" marker-end="url(#a)" stroke="#d29922"/>
+    <line x1="500" y1="140" x2="568" y2="110" marker-end="url(#a)"/>
+    <line x1="500" y1="170" x2="568" y2="195" marker-end="url(#a)"/>
+  </g>
+  <text x="270" y="118" font-size="10.5" fill="#8b949e" text-anchor="middle">pregunta</text>
+  <text x="455" y="222" font-size="10.5" fill="#d29922" text-anchor="middle">el silencio</text>
+  <text x="455" y="234" font-size="10.5" fill="#d29922" text-anchor="middle">es la alarma</text>
+</svg>

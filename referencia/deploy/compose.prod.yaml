@@ -1,6 +1,7 @@
 # Despliegue de producción en un servidor Linux con Docker.
 # Se copia al servidor como /opt/biblioteca/compose.yaml junto con .env y Caddyfile.
-# A diferencia de ../compose.yaml, NO construye: usa una imagen ya liberada (APP_VERSION).
+# A diferencia de ../compose.yaml, NO construye: usa una imagen ya liberada (IMAGEN:APP_VERSION).
+# Actualizar a otra versión: bash desplegar.sh <versión> (semana 7).
 
 # Rotación de logs: sin esto, los logs de Docker crecen hasta llenar el disco.
 x-logging: &logging
@@ -27,7 +28,7 @@ services:
         condition: service_healthy
 
   app:
-    image: biblioteca:${APP_VERSION:?Define APP_VERSION en .env}
+    image: ${IMAGEN:-biblioteca}:${APP_VERSION:?Define APP_VERSION en .env}
     restart: unless-stopped
     logging: *logging
     environment:

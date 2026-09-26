@@ -1,0 +1,30 @@
+# Integración continua: cada push a main y cada pull request construyen la imagen,
+# levantan la app con su base de datos y ejecutan la prueba de humo.
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  prueba-de-humo:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Construir y levantar app + base
+        run: |
+          cp .env.example .env
+          docker compose up -d --build --wait
+
+      - name: Prueba de humo
+        run: bash scripts/smoke-test.sh
+
+      - name: Logs de los contenedores (solo si algo falló)
+        if: failure()
+        run: docker compose logs

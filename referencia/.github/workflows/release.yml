@@ -1,0 +1,116 @@
+# Entrega continua: al publicar una etiqueta vX.Y.Z se construye la imagen con esa versión,
+# se prueba, se publica en GHCR y se despliega en Render.
+#
+# Rollback: Actions > Release > Run workflow, con una versión ya publicada (por ejemplo 1.1.0).
+# No reconstruye nada: vuelve a desplegar la imagen que ya existe en GHCR.
+#
+# Configuración (Settings > Environments > produccion):
+#   secreto  RENDER_DEPLOY_HOOK_URL  deploy hook del servicio de Render (basado en imagen)
+#   variable PRODUCCION_URL          URL pública, para verificar después de desplegar
+# Si no están definidos, el job de despliegue lo avisa y no despliega.
+name: Release
+run-name: Release ${{ inputs.version || github.ref_name }}
+
+on:
+  push:
+    tags: ["v*.*.*"]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Versión ya publicada en GHCR (sin la v), por ejemplo 1.1.0"
+        required: true
+
+permissions:
+  contents: read
+  packages: write
+
+# Nunca dos despliegues a la vez: el segundo espera a que termine el primero.
+concurrency:
+  group: produccion
+  cancel-in-progress: false
+
+env:
+  VERSION: ${{ inputs.version || github.ref_name }}
+
+jobs:
+  publicar:
+    if: github.event_name == 'push'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Calcular versión e imagen
+        run: |
+          echo "VERSION=${VERSION#v}" >> "$GITHUB_ENV"
+          echo "IMAGEN=ghcr.io/${GITHUB_REPOSITORY_OWNER,,}/biblioteca" >> "$GITHUB_ENV"
+
+      - name: Construir la imagen con la versión
+        run: docker build --build-arg APP_VERSION="$VERSION" -t "$IMAGEN:$VERSION" -t "biblioteca:$VERSION" .
+
+      - name: Probar la imagen construida (la misma que se publica)
+        run: |
+          cp .env.example .env
+          APP_VERSION="$VERSION" docker compose up -d --no-build --wait
+          bash scripts/smoke-test.sh
+          curl -fsS http://localhost:8000/api/version | grep -q "\"$VERSION\""
+
+      - name: Publicar en GHCR
+        run: |
+          echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u "${{ github.actor }}" --password-stdin
+          docker push "$IMAGEN:$VERSION"
+
+      - name: Logs de los contenedores (solo si algo falló)
+        if: failure()
+        run: docker compose logs
+
+  desplegar:
+    needs: publicar
+    # Corre después de publicar, o solo (rollback) cuando se lanza a mano.
+    if: ${{ !cancelled() && (needs.publicar.result == 'success' || github.event_name == 'workflow_dispatch') }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    environment: produccion
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Calcular versión e imagen
+        run: |
+          echo "VERSION=${VERSION#v}" >> "$GITHUB_ENV"
+          echo "IMAGEN=ghcr.io/${GITHUB_REPOSITORY_OWNER,,}/biblioteca" >> "$GITHUB_ENV"
+
+      - name: Verificar que la versión existe en GHCR
+        run: |
+          echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u "${{ github.actor }}" --password-stdin
+          docker manifest inspect "$IMAGEN:$VERSION" > /dev/null
+          echo "Imagen encontrada: $IMAGEN:$VERSION"
+
+      - name: Desplegar en Render
+        env:
+          HOOK: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+        run: |
+          if [ -z "$HOOK" ]; then
+            echo "::warning::Falta el secreto RENDER_DEPLOY_HOOK_URL: no se desplegó."
+            exit 0
+          fi
+          curl -fsS -X POST -G "$HOOK" --data-urlencode "imgURL=$IMAGEN:$VERSION" > /dev/null
+          echo "Despliegue de $VERSION solicitado a Render."
+
+      - name: Esperar la versión nueva y ejecutar la prueba de humo
+        env:
+          URL: ${{ vars.PRODUCCION_URL }}
+        run: |
+          if [ -z "$URL" ]; then
+            echo "::warning::Falta la variable PRODUCCION_URL: no se verificó el despliegue."
+            exit 0
+          fi
+          for intento in $(seq 1 40); do
+            if curl -fsS "$URL/api/version" | grep -q "\"$VERSION\""; then
+              bash scripts/smoke-test.sh "$URL"
+              exit 0
+            fi
+            echo "Intento $intento: aún no responde la versión $VERSION"
+            sleep 15
+          done
+          echo "::error::La versión $VERSION no apareció en $URL en 10 minutos."
+          exit 1

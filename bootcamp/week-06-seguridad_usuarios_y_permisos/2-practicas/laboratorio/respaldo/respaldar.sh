@@ -4,6 +4,7 @@
 # Lo ejecuta el usuario de sistema "respaldo" (por cron). Lee:
 #   ~/.pgpass              credenciales del rol biblioteca_respaldo (permisos 600)
 #   /etc/restic/password   contraseña de cifrado de los repositorios (permisos 600)
+# Opcional: URL_LATIDO, URL "push" de Uptime Kuma que se llama solo si todo salió bien (semana 7).
 #
 # Uso manual:  sudo -u respaldo /opt/respaldo/respaldar.sh
 
@@ -40,5 +41,10 @@ restic -r "$REPO_LOCAL" forget --quiet --tag db --keep-daily 7 --keep-weekly 4 -
 
 # 4. Verificación de la estructura del repositorio local.
 restic -r "$REPO_LOCAL" check --quiet
+
+# 5. Latido para el monitoreo (semana 7): si no llega, Uptime Kuma avisa que el respaldo falló.
+if [ -n "${URL_LATIDO:-}" ]; then
+  curl -fsS -m 10 --retry 3 "$URL_LATIDO" > /dev/null || echo "aviso: no se pudo enviar el latido"
+fi
 
 echo "$(date -Is) fin OK"

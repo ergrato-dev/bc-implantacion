@@ -24,9 +24,11 @@ referencia/
 │   ├── requirements.in       ← dependencias directas
 │   └── requirements.txt      ← versiones fijadas (pip-compile)
 ├── web/                      ← React: src/App.jsx, package.json, package-lock.json
+├── .github/workflows/        ← ci.yml (prueba en cada push) y release.yml (GHCR + Render)
 ├── scripts/smoke-test.sh     ← prueba de humo contra cualquier URL
 └── deploy/
     ├── compose.prod.yaml     ← servidor Linux: proxy Caddy + app (imagen liberada) + db
+    ├── desplegar.sh          ← actualizar a una versión del registro, con rollback automático
     ├── Caddyfile
     ├── env.prod.example
     └── render.yaml           ← Blueprint para Render (plan gratuito)

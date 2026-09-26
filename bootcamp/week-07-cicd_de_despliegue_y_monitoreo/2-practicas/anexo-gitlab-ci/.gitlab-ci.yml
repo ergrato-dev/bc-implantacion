@@ -1,0 +1,60 @@
+# Anexo de la semana 7: equivalente en GitLab CI de ci.yml + release.yml de la app de referencia.
+# Pensado para un runner institucional con executor "shell" y Docker instalado.
+#
+# Variables CI/CD del proyecto (Settings > CI/CD > Variables), protegidas y enmascaradas:
+#   SSH_PRIVATE_KEY   (tipo File) llave de la cuenta de despliegue en la VM
+#   DEPLOY_HOST       nombre de la VM Ubuntu del laboratorio (nunca en este archivo)
+#   DEPLOY_USER       cuenta de despliegue en la VM
+# En la VM, la cuenta de despliegue ejecuta con sudo SOLO /usr/local/bin/desplegar-biblioteca,
+# un script de root que llama a /opt/biblioteca/desplegar.sh (regla sudoers de la semana 6).
+
+stages: [prueba, publicar, desplegar]
+
+default:
+  tags: [docker-shell]          # los define quien administra el runner
+
+variables:
+  IMAGEN: $CI_REGISTRY_IMAGE    # registro de contenedores del propio proyecto en GitLab
+
+prueba-de-humo:
+  stage: prueba
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+    - if: $CI_COMMIT_BRANCH
+  script:
+    - cp .env.example .env
+    - docker compose -p "ci-$CI_JOB_ID" up -d --build --wait
+    - bash scripts/smoke-test.sh
+  after_script:
+    # Runner compartido: se limpia siempre, pase o falle.
+    - docker compose -p "ci-$CI_JOB_ID" logs
+    - docker compose -p "ci-$CI_JOB_ID" down -v
+
+publicar:
+  stage: publicar
+  rules:
+    - if: $CI_COMMIT_TAG =~ /^v\d+\.\d+\.\d+$/
+  script:
+    - VERSION="${CI_COMMIT_TAG#v}"
+    - docker build --build-arg APP_VERSION="$VERSION" -t "$IMAGEN:$VERSION" -t "biblioteca:$VERSION" .
+    - cp .env.example .env
+    - APP_VERSION="$VERSION" docker compose -p "ci-$CI_JOB_ID" up -d --no-build --wait
+    - bash scripts/smoke-test.sh
+    - echo "$CI_REGISTRY_PASSWORD" | docker login "$CI_REGISTRY" -u "$CI_REGISTRY_USER" --password-stdin
+    - docker push "$IMAGEN:$VERSION"
+  after_script:
+    - docker compose -p "ci-$CI_JOB_ID" down -v
+    - docker logout "$CI_REGISTRY"
+
+desplegar-servidor:
+  stage: desplegar
+  rules:
+    - if: $CI_COMMIT_TAG =~ /^v\d+\.\d+\.\d+$/
+      when: manual              # una persona aprueba el paso a producción
+  environment:
+    name: produccion
+  resource_group: produccion    # nunca dos despliegues a la vez
+  script:
+    - VERSION="${CI_COMMIT_TAG#v}"
+    - chmod 600 "$SSH_PRIVATE_KEY"
+    - ssh -i "$SSH_PRIVATE_KEY" -o StrictHostKeyChecking=accept-new "$DEPLOY_USER@$DEPLOY_HOST" "sudo /usr/local/bin/desplegar-biblioteca $VERSION"
