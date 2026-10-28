@@ -79,3 +79,11 @@ contenedores o combinación) y justifícala.
 ## 📚 Recursos Adicionales
 
 Ver [`4-recursos/webgrafia/`](../4-recursos/webgrafia/README.md).
+
+---
+
+## 🔗 Navegación
+
+| ← Anterior | → Siguiente |
+|-----------|-------------|
+| [← Software de Servidor y Licenciamiento](04-software-de-servidor-y-licenciamiento.md) | [Sistemas Operativos de Servidor →](06-sistemas-operativos-de-servidor.md) |

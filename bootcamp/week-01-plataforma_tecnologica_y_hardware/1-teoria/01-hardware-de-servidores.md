@@ -90,3 +90,11 @@ cliente quisiera alojarlo en sus instalaciones, y justifícalo con la tabla de l
 ## 📚 Recursos Adicionales
 
 Ver [`4-recursos/webgrafia/`](../4-recursos/webgrafia/README.md).
+
+---
+
+## 🔗 Navegación
+
+| ← Anterior | → Siguiente |
+|-----------|-------------|
+| [← Índice de la semana](../README.md) | [Arreglos de Discos (RAID) →](02-arreglos-de-discos-raid.md) |

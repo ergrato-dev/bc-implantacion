@@ -83,3 +83,11 @@ justifica la elección con capacidad útil, tolerancia y patrón de escritura.
 ## 📚 Recursos Adicionales
 
 Ver [`4-recursos/webgrafia/`](../4-recursos/webgrafia/README.md).
+
+---
+
+## 🔗 Navegación
+
+| ← Anterior | → Siguiente |
+|-----------|-------------|
+| [← Hardware de Servidores: Torre, Rack y Blade](01-hardware-de-servidores.md) | [Dimensionamiento y Requisitos Mínimos →](03-dimensionamiento-y-requisitos-minimos.md) |

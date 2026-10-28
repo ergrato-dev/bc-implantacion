@@ -84,3 +84,11 @@ aplica el método de la sección 3 y registra la matriz en la ficha técnica.
 ## 📚 Recursos Adicionales
 
 Ver [`4-recursos/webgrafia/`](../4-recursos/webgrafia/README.md).
+
+---
+
+## 🔗 Navegación
+
+| ← Anterior | → Siguiente |
+|-----------|-------------|
+| [← Arreglos de Discos (RAID)](02-arreglos-de-discos-raid.md) | [Software de Servidor y Licenciamiento →](04-software-de-servidor-y-licenciamiento.md) |

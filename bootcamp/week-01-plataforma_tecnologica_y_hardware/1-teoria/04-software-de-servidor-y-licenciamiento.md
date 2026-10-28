@@ -75,3 +75,11 @@ y responde: ¿hay algún componente que genere costo o restricción al implantar
 ## 📚 Recursos Adicionales
 
 Ver [`4-recursos/webgrafia/`](../4-recursos/webgrafia/README.md).
+
+---
+
+## 🔗 Navegación
+
+| ← Anterior | → Siguiente |
+|-----------|-------------|
+| [← Dimensionamiento y Requisitos Mínimos](03-dimensionamiento-y-requisitos-minimos.md) | [Máquinas Virtuales y Contenedores →](05-virtualizacion-y-contenedores.md) |
