@@ -110,3 +110,11 @@ llave, y cómo verificas que la base no está expuesta.
 ## 📚 Recursos Adicionales
 
 Ver [`4-recursos/webgrafia/`](../4-recursos/webgrafia/README.md).
+
+---
+
+## 🔗 Navegación
+
+| ← Anterior | → Siguiente |
+|-----------|-------------|
+| [← Usuarios, Grupos y Permisos en Linux](01-usuarios-grupos-y-permisos.md) | [Roles y Privilegios en la Base de Datos →](03-roles-y-privilegios-en-la-base-de-datos.md) |

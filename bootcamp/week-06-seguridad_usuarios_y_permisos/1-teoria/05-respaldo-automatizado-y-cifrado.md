@@ -109,3 +109,11 @@ restauración de desastre probada con su tiempo medido.
 ## 📚 Recursos Adicionales
 
 Ver [`4-recursos/webgrafia/`](../4-recursos/webgrafia/README.md).
+
+---
+
+## 🔗 Navegación
+
+| ← Anterior | → Siguiente |
+|-----------|-------------|
+| [← Gestión de Secretos](04-gestion-de-secretos.md) | [Índice de la semana →](../README.md) |

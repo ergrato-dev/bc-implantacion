@@ -81,3 +81,11 @@ vive en cada ambiente, quién lo lee y cómo se rota.
 ## 📚 Recursos Adicionales
 
 Ver [`4-recursos/webgrafia/`](../4-recursos/webgrafia/README.md).
+
+---
+
+## 🔗 Navegación
+
+| ← Anterior | → Siguiente |
+|-----------|-------------|
+| [← Roles y Privilegios en la Base de Datos](03-roles-y-privilegios-en-la-base-de-datos.md) | [Respaldo Automatizado y Cifrado →](05-respaldo-automatizado-y-cifrado.md) |

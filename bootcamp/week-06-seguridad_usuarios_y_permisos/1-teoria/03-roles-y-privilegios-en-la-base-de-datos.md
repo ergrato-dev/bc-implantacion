@@ -119,3 +119,11 @@ las pruebas negativas que los validan.
 ## 📚 Recursos Adicionales
 
 Ver [`4-recursos/webgrafia/`](../4-recursos/webgrafia/README.md).
+
+---
+
+## 🔗 Navegación
+
+| ← Anterior | → Siguiente |
+|-----------|-------------|
+| [← Acceso Remoto Seguro y Firewall](02-acceso-remoto-y-firewall.md) | [Gestión de Secretos →](04-gestion-de-secretos.md) |

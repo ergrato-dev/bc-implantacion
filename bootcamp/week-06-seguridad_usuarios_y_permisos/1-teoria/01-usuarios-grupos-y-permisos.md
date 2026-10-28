@@ -105,3 +105,11 @@ tu matriz de usuarios.
 ## 📚 Recursos Adicionales
 
 Ver [`4-recursos/webgrafia/`](../4-recursos/webgrafia/README.md).
+
+---
+
+## 🔗 Navegación
+
+| ← Anterior | → Siguiente |
+|-----------|-------------|
+| [← Índice de la semana](../README.md) | [Acceso Remoto Seguro y Firewall →](02-acceso-remoto-y-firewall.md) |
