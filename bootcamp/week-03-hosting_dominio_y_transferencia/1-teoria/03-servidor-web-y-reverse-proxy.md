@@ -97,3 +97,11 @@ servicio, e indica qué puertos quedan abiertos a Internet.
 ## 📚 Recursos Adicionales
 
 Ver [`4-recursos/webgrafia/`](../4-recursos/webgrafia/README.md).
+
+---
+
+## 🔗 Navegación
+
+| ← Anterior | → Siguiente |
+|-----------|-------------|
+| [← Dominios y DNS](02-dominios-y-dns.md) | [Transferencia de Archivos: FTP, SFTP, `scp` y `rsync` →](04-transferencia-de-archivos.md) |

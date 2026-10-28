@@ -75,3 +75,11 @@ esta tabla.
 ## 📚 Recursos Adicionales
 
 Ver [`4-recursos/webgrafia/`](../4-recursos/webgrafia/README.md).
+
+---
+
+## 🔗 Navegación
+
+| ← Anterior | → Siguiente |
+|-----------|-------------|
+| [← Índice de la semana](../README.md) | [Dominios y DNS →](02-dominios-y-dns.md) |

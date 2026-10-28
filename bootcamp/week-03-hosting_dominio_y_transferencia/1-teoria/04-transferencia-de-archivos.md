@@ -91,3 +91,11 @@ y con qué tipo de autenticación.
 ## 📚 Recursos Adicionales
 
 Ver [`4-recursos/webgrafia/`](../4-recursos/webgrafia/README.md).
+
+---
+
+## 🔗 Navegación
+
+| ← Anterior | → Siguiente |
+|-----------|-------------|
+| [← Servidor Web, Reverse Proxy y HTTPS](03-servidor-web-y-reverse-proxy.md) | [Índice de la semana →](../README.md) |

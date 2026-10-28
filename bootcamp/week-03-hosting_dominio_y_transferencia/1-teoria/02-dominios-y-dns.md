@@ -91,3 +91,11 @@ registros DNS que necesitarías, con su TTL.
 ## 📚 Recursos Adicionales
 
 Ver [`4-recursos/webgrafia/`](../4-recursos/webgrafia/README.md).
+
+---
+
+## 🔗 Navegación
+
+| ← Anterior | → Siguiente |
+|-----------|-------------|
+| [← Tipos de Hosting](01-tipos-de-hosting.md) | [Servidor Web, Reverse Proxy y HTTPS →](03-servidor-web-y-reverse-proxy.md) |
