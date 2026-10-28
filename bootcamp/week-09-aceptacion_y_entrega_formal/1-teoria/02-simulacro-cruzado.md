@@ -77,3 +77,11 @@ máximo y organiza con el instructor qué equipo instala tu proyecto y cuál ins
 ## 📚 Recursos Adicionales
 
 Ver [`4-recursos/webgrafia/`](../4-recursos/webgrafia/README.md).
+
+---
+
+## 🔗 Navegación
+
+| ← Anterior | → Siguiente |
+|-----------|-------------|
+| [← Pruebas de Aceptación](01-pruebas-de-aceptacion.md) | [Acta de Entrega y Niveles de Servicio →](03-acta-de-entrega.md) |

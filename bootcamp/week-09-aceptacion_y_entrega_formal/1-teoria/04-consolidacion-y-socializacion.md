@@ -88,3 +88,11 @@ presentación de 10 minutos y registra las lecciones aprendidas del equipo.
 ## 📚 Recursos Adicionales
 
 Ver [`4-recursos/webgrafia/`](../4-recursos/webgrafia/README.md).
+
+---
+
+## 🔗 Navegación
+
+| ← Anterior | → Siguiente |
+|-----------|-------------|
+| [← Acta de Entrega y Niveles de Servicio](03-acta-de-entrega.md) | [Índice de la semana →](../README.md) |

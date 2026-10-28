@@ -75,3 +75,11 @@ niveles de servicio que puedas cumplir y la lista de accesos a transferir.
 ## 📚 Recursos Adicionales
 
 Ver [`4-recursos/webgrafia/`](../4-recursos/webgrafia/README.md).
+
+---
+
+## 🔗 Navegación
+
+| ← Anterior | → Siguiente |
+|-----------|-------------|
+| [← Simulacro Cruzado: el Gate del Plan de Implantación](02-simulacro-cruzado.md) | [Consolidación del Plan y Socialización →](04-consolidacion-y-socializacion.md) |

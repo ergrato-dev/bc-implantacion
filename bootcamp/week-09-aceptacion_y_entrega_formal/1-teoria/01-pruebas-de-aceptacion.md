@@ -85,3 +85,11 @@ de salida y ejecútalos con alguien que haga de cliente.
 ## 📚 Recursos Adicionales
 
 Ver [`4-recursos/webgrafia/`](../4-recursos/webgrafia/README.md).
+
+---
+
+## 🔗 Navegación
+
+| ← Anterior | → Siguiente |
+|-----------|-------------|
+| [← Índice de la semana](../README.md) | [Simulacro Cruzado: el Gate del Plan de Implantación →](02-simulacro-cruzado.md) |
