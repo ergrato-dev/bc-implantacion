@@ -92,3 +92,11 @@ secretos y quién aprueba el paso a producción.
 ## 📚 Recursos Adicionales
 
 Ver [`4-recursos/webgrafia/`](../4-recursos/webgrafia/README.md).
+
+---
+
+## 🔗 Navegación
+
+| ← Anterior | → Siguiente |
+|-----------|-------------|
+| [← Índice de la semana](../README.md) | [GitHub Actions y GHCR →](02-github-actions-y-ghcr.md) |

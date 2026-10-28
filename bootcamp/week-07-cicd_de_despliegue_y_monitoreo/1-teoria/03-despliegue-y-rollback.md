@@ -92,3 +92,11 @@ hace el rollback y qué migraciones de tu historial no serían compatibles hacia
 ## 📚 Recursos Adicionales
 
 Ver [`4-recursos/webgrafia/`](../4-recursos/webgrafia/README.md).
+
+---
+
+## 🔗 Navegación
+
+| ← Anterior | → Siguiente |
+|-----------|-------------|
+| [← GitHub Actions y GHCR](02-github-actions-y-ghcr.md) | [Monitoreo Básico →](04-monitoreo-basico.md) |

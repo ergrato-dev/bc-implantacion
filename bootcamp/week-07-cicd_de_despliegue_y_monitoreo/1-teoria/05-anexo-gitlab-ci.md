@@ -59,3 +59,11 @@ de tu proyecto. Si no, basta con reconocer las equivalencias.
 ## 📚 Recursos Adicionales
 
 Ver [`4-recursos/webgrafia/`](../4-recursos/webgrafia/README.md).
+
+---
+
+## 🔗 Navegación
+
+| ← Anterior | → Siguiente |
+|-----------|-------------|
+| [← Monitoreo Básico](04-monitoreo-basico.md) | [Índice de la semana →](../README.md) |

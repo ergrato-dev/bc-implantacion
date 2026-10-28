@@ -103,3 +103,11 @@ qué canal, y qué hace esa persona al recibir cada una.
 ## 📚 Recursos Adicionales
 
 Ver [`4-recursos/webgrafia/`](../4-recursos/webgrafia/README.md).
+
+---
+
+## 🔗 Navegación
+
+| ← Anterior | → Siguiente |
+|-----------|-------------|
+| [← Estrategias de Despliegue y Rollback](03-despliegue-y-rollback.md) | [Anexo — El Mismo Pipeline en GitLab CI →](05-anexo-gitlab-ci.md) |

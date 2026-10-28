@@ -116,3 +116,11 @@ producción, secretos y reglas del ambiente `produccion`.
 ## 📚 Recursos Adicionales
 
 Ver [`4-recursos/webgrafia/`](../4-recursos/webgrafia/README.md).
+
+---
+
+## 🔗 Navegación
+
+| ← Anterior | → Siguiente |
+|-----------|-------------|
+| [← CI/CD Orientado al Despliegue](01-ci-cd-orientado-a-despliegue.md) | [Estrategias de Despliegue y Rollback →](03-despliegue-y-rollback.md) |
