@@ -81,3 +81,11 @@ por escrito antes de ejecutar.
 ## 📚 Recursos Adicionales
 
 Ver [`4-recursos/webgrafia/`](../4-recursos/webgrafia/README.md).
+
+---
+
+## 🔗 Navegación
+
+| ← Anterior | → Siguiente |
+|-----------|-------------|
+| [← Índice de la semana](../README.md) | [Diseño del Plan de Migración →](02-plan-de-migracion.md) |

@@ -87,3 +87,11 @@ Redacta la v0 del plan de instalación de tu proyecto con las diez secciones.
 ## 📚 Recursos Adicionales
 
 Ver [`4-recursos/webgrafia/`](../4-recursos/webgrafia/README.md).
+
+---
+
+## 🔗 Navegación
+
+| ← Anterior | → Siguiente |
+|-----------|-------------|
+| [← Procesos de Restauración y Pruebas](04-restauracion-y-pruebas.md) | [Índice de la semana →](../README.md) |

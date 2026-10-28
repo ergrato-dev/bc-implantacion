@@ -76,3 +76,11 @@ ejecutará sin tu ayuda.
 ## 📚 Recursos Adicionales
 
 Ver [`4-recursos/webgrafia/`](../4-recursos/webgrafia/README.md).
+
+---
+
+## 🔗 Navegación
+
+| ← Anterior | → Siguiente |
+|-----------|-------------|
+| [← Copias de Seguridad](03-copias-de-seguridad.md) | [Diseño del Plan de Instalación →](05-plan-de-instalacion.md) |

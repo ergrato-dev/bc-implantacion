@@ -87,3 +87,11 @@ el plan con esta estructura en el entregable.
 ## 📚 Recursos Adicionales
 
 Ver [`4-recursos/webgrafia/`](../4-recursos/webgrafia/README.md).
+
+---
+
+## 🔗 Navegación
+
+| ← Anterior | → Siguiente |
+|-----------|-------------|
+| [← Migración de Datos: Concepto y Estrategias](01-migracion-de-datos.md) | [Copias de Seguridad →](03-copias-de-seguridad.md) |

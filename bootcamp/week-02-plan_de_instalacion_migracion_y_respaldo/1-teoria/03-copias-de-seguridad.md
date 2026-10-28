@@ -86,3 +86,11 @@ guarda cada copia (3-2-1) y quién es responsable.
 ## 📚 Recursos Adicionales
 
 Ver [`4-recursos/webgrafia/`](../4-recursos/webgrafia/README.md).
+
+---
+
+## 🔗 Navegación
+
+| ← Anterior | → Siguiente |
+|-----------|-------------|
+| [← Diseño del Plan de Migración](02-plan-de-migracion.md) | [Procesos de Restauración y Pruebas →](04-restauracion-y-pruebas.md) |
