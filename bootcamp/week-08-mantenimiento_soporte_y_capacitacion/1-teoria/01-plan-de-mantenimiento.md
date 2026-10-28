@@ -81,3 +81,11 @@ EOL y la ventana de mantenimiento que propondrías al cliente.
 ## 📚 Recursos Adicionales
 
 Ver [`4-recursos/webgrafia/`](../4-recursos/webgrafia/README.md).
+
+---
+
+## 🔗 Navegación
+
+| ← Anterior | → Siguiente |
+|-----------|-------------|
+| [← Índice de la semana](../README.md) | [Actualizaciones de Dependencias, Imágenes y Sistema Operativo →](02-actualizaciones-y-dependencias.md) |

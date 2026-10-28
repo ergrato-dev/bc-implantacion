@@ -96,3 +96,11 @@ sesiones, materiales, evaluación y cronograma.
 ## 📚 Recursos Adicionales
 
 Ver [`4-recursos/webgrafia/`](../4-recursos/webgrafia/README.md).
+
+---
+
+## 🔗 Navegación
+
+| ← Anterior | → Siguiente |
+|-----------|-------------|
+| [← Soporte por Niveles](03-soporte-por-niveles.md) | [Ayudas en Línea →](05-ayudas-en-linea.md) |

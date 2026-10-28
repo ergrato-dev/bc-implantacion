@@ -82,3 +82,11 @@ desde la app o el README, y pruébalas con alguien de otro equipo.
 ## 📚 Recursos Adicionales
 
 Ver [`4-recursos/webgrafia/`](../4-recursos/webgrafia/README.md).
+
+---
+
+## 🔗 Navegación
+
+| ← Anterior | → Siguiente |
+|-----------|-------------|
+| [← Plan de Capacitación](04-plan-de-capacitacion.md) | [Índice de la semana →](../README.md) |

@@ -112,3 +112,11 @@ equipo con cada tipo de actualización y en cuánto tiempo.
 ## 📚 Recursos Adicionales
 
 Ver [`4-recursos/webgrafia/`](../4-recursos/webgrafia/README.md).
+
+---
+
+## 🔗 Navegación
+
+| ← Anterior | → Siguiente |
+|-----------|-------------|
+| [← Plan de Mantenimiento](01-plan-de-mantenimiento.md) | [Soporte por Niveles →](03-soporte-por-niveles.md) |

@@ -100,3 +100,11 @@ prioridad con tiempos propuestos y al menos dos runbooks.
 ## 📚 Recursos Adicionales
 
 Ver [`4-recursos/webgrafia/`](../4-recursos/webgrafia/README.md).
+
+---
+
+## 🔗 Navegación
+
+| ← Anterior | → Siguiente |
+|-----------|-------------|
+| [← Actualizaciones de Dependencias, Imágenes y Sistema Operativo](02-actualizaciones-y-dependencias.md) | [Plan de Capacitación →](04-plan-de-capacitacion.md) |
