@@ -97,3 +97,11 @@ ambiente (ficticio) y qué pasa si falta.
 ## 📚 Recursos Adicionales
 
 Ver [`4-recursos/webgrafia/`](../4-recursos/webgrafia/README.md).
+
+---
+
+## 🔗 Navegación
+
+| ← Anterior | → Siguiente |
+|-----------|-------------|
+| [← Índice de la semana](../README.md) | [Configuración de los Servicios Requeridos →](02-servicios-requeridos.md) |

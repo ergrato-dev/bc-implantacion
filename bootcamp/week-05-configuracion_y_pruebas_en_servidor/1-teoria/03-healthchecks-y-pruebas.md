@@ -95,3 +95,11 @@ casos funcionales.
 ## 📚 Recursos Adicionales
 
 Ver [`4-recursos/webgrafia/`](../4-recursos/webgrafia/README.md).
+
+---
+
+## 🔗 Navegación
+
+| ← Anterior | → Siguiente |
+|-----------|-------------|
+| [← Configuración de los Servicios Requeridos](02-servicios-requeridos.md) | [Ejecutar una Migración a una Base Gestionada →](04-ejecutar-la-migracion.md) |

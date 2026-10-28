@@ -75,3 +75,11 @@ la evidencia: huellas de origen y destino, tiempo de la ventana y prueba de humo
 ## 📚 Recursos Adicionales
 
 Ver [`4-recursos/webgrafia/`](../4-recursos/webgrafia/README.md).
+
+---
+
+## 🔗 Navegación
+
+| ← Anterior | → Siguiente |
+|-----------|-------------|
+| [← Healthchecks y Pruebas Posteriores al Despliegue](03-healthchecks-y-pruebas.md) | [Índice de la semana →](../README.md) |

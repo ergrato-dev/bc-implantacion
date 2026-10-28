@@ -96,3 +96,11 @@ de reinicio y rotación de logs.
 ## 📚 Recursos Adicionales
 
 Ver [`4-recursos/webgrafia/`](../4-recursos/webgrafia/README.md).
+
+---
+
+## 🔗 Navegación
+
+| ← Anterior | → Siguiente |
+|-----------|-------------|
+| [← Configuración del Software por Ambientes](01-configuracion-por-ambientes.md) | [Healthchecks y Pruebas Posteriores al Despliegue →](03-healthchecks-y-pruebas.md) |
