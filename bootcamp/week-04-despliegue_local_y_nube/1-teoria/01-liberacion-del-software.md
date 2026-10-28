@@ -104,3 +104,11 @@ notas) y agrega la lista de verificación al plan de instalación.
 ## 📚 Recursos Adicionales
 
 Ver [`4-recursos/webgrafia/`](../4-recursos/webgrafia/README.md).
+
+---
+
+## 🔗 Navegación
+
+| ← Anterior | → Siguiente |
+|-----------|-------------|
+| [← Índice de la semana](../README.md) | [Organización de Archivos y Despliegue en un Servidor →](02-despliegue-en-servidor.md) |

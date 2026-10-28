@@ -81,3 +81,11 @@ y justifica la región.
 ## 📚 Recursos Adicionales
 
 Ver [`4-recursos/webgrafia/`](../4-recursos/webgrafia/README.md).
+
+---
+
+## 🔗 Navegación
+
+| ← Anterior | → Siguiente |
+|-----------|-------------|
+| [← Organización de Archivos y Despliegue en un Servidor](02-despliegue-en-servidor.md) | [Costos en la Nube y Límites del Free Tier →](04-costos-y-free-tier.md) |

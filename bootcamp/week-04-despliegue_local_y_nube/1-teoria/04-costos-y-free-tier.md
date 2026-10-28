@@ -90,3 +90,11 @@ en una gran nube y PaaS + base gestionada) y recomienda una al cliente.
 ## 📚 Recursos Adicionales
 
 Ver [`4-recursos/webgrafia/`](../4-recursos/webgrafia/README.md).
+
+---
+
+## 🔗 Navegación
+
+| ← Anterior | → Siguiente |
+|-----------|-------------|
+| [← Cloud Computing: Modelos y Proveedores](03-cloud-computing.md) | [Índice de la semana →](../README.md) |

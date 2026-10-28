@@ -104,3 +104,11 @@ despliegue, actualización y rollback. Clasifica tus migraciones: ¿alguna impid
 ## 📚 Recursos Adicionales
 
 Ver [`4-recursos/webgrafia/`](../4-recursos/webgrafia/README.md).
+
+---
+
+## 🔗 Navegación
+
+| ← Anterior | → Siguiente |
+|-----------|-------------|
+| [← Procedimientos de Liberación del Software](01-liberacion-del-software.md) | [Cloud Computing: Modelos y Proveedores →](03-cloud-computing.md) |
