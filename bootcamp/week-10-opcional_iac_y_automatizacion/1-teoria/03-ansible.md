@@ -110,3 +110,11 @@ Convierte la sección 5 de tu plan en un playbook idempotente, con los secretos 
 ## 📚 Recursos Adicionales
 
 Ver [`4-recursos/webgrafia/`](../4-recursos/webgrafia/README.md).
+
+---
+
+## 🔗 Navegación
+
+| ← Anterior | → Siguiente |
+|-----------|-------------|
+| [← cloud-init: el Primer Arranque](02-cloud-init.md) | [OpenTofu: Aprovisionar Infraestructura →](04-opentofu.md) |

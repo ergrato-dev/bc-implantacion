@@ -84,3 +84,11 @@ los primeros candidatos a volverse código.
 ## 📚 Recursos Adicionales
 
 Ver [`4-recursos/webgrafia/`](../4-recursos/webgrafia/README.md).
+
+---
+
+## 🔗 Navegación
+
+| ← Anterior | → Siguiente |
+|-----------|-------------|
+| [← Índice de la semana](../README.md) | [cloud-init: el Primer Arranque →](02-cloud-init.md) |

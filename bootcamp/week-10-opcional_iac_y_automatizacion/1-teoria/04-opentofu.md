@@ -100,3 +100,11 @@ usarías. No es obligatorio aplicarlo.
 ## 📚 Recursos Adicionales
 
 Ver [`4-recursos/webgrafia/`](../4-recursos/webgrafia/README.md).
+
+---
+
+## 🔗 Navegación
+
+| ← Anterior | → Siguiente |
+|-----------|-------------|
+| [← Ansible: el Plan de Instalación Ejecutable](03-ansible.md) | [Índice de la semana →](../README.md) |

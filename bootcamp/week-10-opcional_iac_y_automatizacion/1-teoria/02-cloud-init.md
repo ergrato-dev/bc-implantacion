@@ -82,3 +82,11 @@ Escribe el `user-data` que dejaría listo para Ansible el servidor de tu proyect
 ## 📚 Recursos Adicionales
 
 Ver [`4-recursos/webgrafia/`](../4-recursos/webgrafia/README.md).
+
+---
+
+## 🔗 Navegación
+
+| ← Anterior | → Siguiente |
+|-----------|-------------|
+| [← Infraestructura como Código](01-infraestructura-como-codigo.md) | [Ansible: el Plan de Instalación Ejecutable →](03-ansible.md) |
